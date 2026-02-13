@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import typography from '@tailwindcss/typography';
+
 export default {
     content: [
         "./index.html",
@@ -8,20 +10,19 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Minimalist palette
                 primary: {
-                    light: '#f3f4f6', // gray-100
-                    DEFAULT: '#1f2937', // gray-800
-                    dark: '#111827', // gray-900
+                    light: '#f3f4f6',
+                    DEFAULT: '#1f2937',
+                    dark: '#111827',
                 },
                 accent: {
-                    light: '#3b82f6', // blue-500 (subtle)
-                    DEFAULT: '#2563eb', // blue-600
+                    light: '#3b82f6',
+                    DEFAULT: '#2563eb',
                 },
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
-                serif: ['Merriweather', 'serif'], // For blog content
+                serif: ['Merriweather', 'serif'],
             },
             animation: {
                 'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -37,7 +38,49 @@ export default {
                     '100%': { transform: 'translateY(0)', opacity: '1' },
                 },
             },
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        color: theme('colors.gray.700'),
+                        a: {
+                            color: theme('colors.blue.600'),
+                            '&:hover': {
+                                color: theme('colors.blue.700'),
+                            },
+                        },
+                        'h2, h3, h4': {
+                            'font-weight': '600',
+                            'letter-spacing': '-0.025em',
+                        },
+                        code: {
+                            color: theme('colors.pink.600'),
+                        },
+                    },
+                },
+                invert: {
+                    css: {
+                        color: theme('colors.gray.300'),
+                        a: {
+                            color: theme('colors.blue.400'),
+                            '&:hover': {
+                                color: theme('colors.blue.300'),
+                            },
+                        },
+                        'h1, h2, h3, h4': {
+                            color: theme('colors.gray.100'),
+                        },
+                        strong: {
+                            color: theme('colors.gray.100'),
+                        },
+                        code: {
+                            color: theme('colors.pink.400'),
+                        },
+                    },
+                },
+            }),
         },
     },
-    plugins: [],
+    plugins: [
+        typography,
+    ],
 }

@@ -12,6 +12,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Projects', path: '/projects' },
         { name: 'Writing', path: '/writing' },
+        { name: 'Now', path: '/now' },
         { name: 'About', path: '/about' },
         { name: 'Contact', path: '/contact' },
     ];
@@ -19,6 +20,15 @@ const Navbar = () => {
     const isActive = (path) => {
         if (path === '/' && location.pathname !== '/') return false;
         return location.pathname.startsWith(path);
+    };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+        if (!isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     };
 
     return (
@@ -60,7 +70,7 @@ const Navbar = () => {
                         {isDark ? <Sun size={18} /> : <Moon size={18} />}
                     </button>
                     <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        onClick={toggleMenu}
                         className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
                     >
                         {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -70,14 +80,17 @@ const Navbar = () => {
 
             {/* Mobile Navigation */}
             {isMenuOpen && (
-                <div className="md:hidden border-t border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-950 absolute w-full left-0 animate-fade-in shadow-xl">
-                    <div className="container-custom py-4 flex flex-col gap-4">
+                <div className="md:hidden border-t border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-950 absolute w-full left-0 h-[calc(100vh-4rem)] animate-fade-in shadow-xl z-50">
+                    <div className="container-custom py-8 flex flex-col gap-6 items-center">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                onClick={() => setIsMenuOpen(false)}
-                                className={`text-base font-medium py-2 transition-colors ${isActive(link.path)
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    document.body.style.overflow = 'auto'; // Re-enable scroll
+                                }}
+                                className={`text-2xl font-medium py-2 transition-colors ${isActive(link.path)
                                         ? 'text-gray-900 dark:text-white'
                                         : 'text-gray-500 dark:text-gray-400'
                                     }`}
