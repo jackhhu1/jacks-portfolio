@@ -1,6 +1,8 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import ScrollToTop from './components/ScrollToTop';
+import { CommandMenu } from './components/CommandMenu';
 import { lazy, Suspense } from 'react';
 
 // Lazy loading pages for performance
@@ -12,6 +14,7 @@ const PostLayout = lazy(() => import('./pages/PostLayout'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Now = lazy(() => import('./pages/Now'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Simple loading spinner
 const Loading = () => (
@@ -20,11 +23,12 @@ const Loading = () => (
   </div>
 );
 
-// Wrapper to handle scroll restoration
+// Wrapper to handle scroll restoration & global components
 function AppContent() {
   return (
     <Router>
       <ScrollToTop />
+      <CommandMenu />
       <Layout>
         <Suspense fallback={<Loading />}>
           <Routes>
@@ -36,6 +40,7 @@ function AppContent() {
             <Route path="/now" element={<Now />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </Layout>
