@@ -18,7 +18,7 @@ const Home = () => {
                         Building scalable systems
                     </h2>
                     <p className="text-xl md:text-2xl font-light text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-                        Across student organizations, investment business lines and software
+                        Across student organizations, businesses and software
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
