@@ -1,109 +1,234 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Flame, Zap, Rocket, Terminal, CheckCircle2, Circle, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ProjectShowcase from '../components/ProjectShowcase';
 
-// Scattered photo data — each has position offsets, rotation, and z-index
+// ─── Scattered Images ───────────────────────────────────────────
 const scatteredImages = [
     {
         src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         alt: 'Team collaboration',
         label: 'Enactus',
-        style: { top: '8%', left: '58%', rotate: '-4deg', width: '220px', height: '160px', zIndex: 3 },
-        expandedStyle: { width: '500px', height: '360px' },
+        style: { top: '5%', left: '55%', rotate: '-4deg', width: '280px', height: '200px', zIndex: 3 },
     },
     {
         src: 'https://images.unsplash.com/photo-1504198458649-3128b932f49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         alt: 'Nature materials',
         label: 'Caprae',
-        style: { top: '22%', left: '72%', rotate: '6deg', width: '180px', height: '240px', zIndex: 2 },
-        expandedStyle: { width: '400px', height: '520px' },
+        style: { top: '18%', left: '74%', rotate: '6deg', width: '230px', height: '300px', zIndex: 2 },
     },
     {
         src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         alt: 'Analytics dashboard',
         label: 'Kindling Labs',
-        style: { top: '55%', left: '62%', rotate: '3deg', width: '200px', height: '140px', zIndex: 4 },
-        expandedStyle: { width: '460px', height: '320px' },
+        style: { top: '52%', left: '58%', rotate: '3deg', width: '260px', height: '180px', zIndex: 4 },
     },
     {
         src: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         alt: 'Presenting on stage',
         label: 'Leadership',
-        style: { top: '42%', left: '78%', rotate: '-7deg', width: '170px', height: '130px', zIndex: 1 },
-        expandedStyle: { width: '420px', height: '310px' },
+        style: { top: '38%', left: '80%', rotate: '-7deg', width: '220px', height: '170px', zIndex: 1 },
     },
     {
         src: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         alt: 'Mobile app',
         label: 'Product',
-        style: { top: '68%', left: '76%', rotate: '5deg', width: '150px', height: '200px', zIndex: 5 },
-        expandedStyle: { width: '340px', height: '450px' },
+        style: { top: '65%', left: '75%', rotate: '5deg', width: '200px', height: '260px', zIndex: 5 },
     },
 ];
 
-const ScatteredPhoto = ({ image, index, expandedIndex, onToggle }) => {
-    const isExpanded = expandedIndex === index;
-    const isOtherExpanded = expandedIndex !== null && expandedIndex !== index;
+// ─── Scattered Photo Component (hover to expand) ────────────────
+const ScatteredPhoto = ({ image, index, hoveredIndex, onHover, onLeave }) => {
+    const isHovered = hoveredIndex === index;
+    const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
 
     return (
-        <button
-            onClick={() => onToggle(index)}
-            className={`absolute group cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-lg overflow-hidden shadow-2xl border-2 select-none
-                ${isExpanded
-                    ? 'z-50 border-white/40 dark:border-white/30 shadow-black/40'
-                    : 'border-white/20 dark:border-white/10 hover:border-white/40 dark:hover:border-white/20 hover:shadow-black/30'
+        <div
+            onMouseEnter={() => onHover(index)}
+            onMouseLeave={onLeave}
+            className={`absolute cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-xl overflow-hidden shadow-2xl border-2 select-none
+                ${isHovered
+                    ? 'z-50 border-white/40 dark:border-white/30 shadow-black/40 scale-[1.35]'
+                    : 'border-white/20 dark:border-white/10 hover:border-white/40 dark:hover:border-white/20'
                 }
-                ${isOtherExpanded ? 'opacity-30 scale-95 blur-[1px]' : 'opacity-100'}
+                ${isOtherHovered ? 'opacity-40 scale-[0.97] blur-[2px]' : 'opacity-100'}
             `}
             style={{
                 top: image.style.top,
                 left: image.style.left,
-                width: isExpanded ? image.expandedStyle.width : image.style.width,
-                height: isExpanded ? image.expandedStyle.height : image.style.height,
-                transform: `rotate(${isExpanded ? '0deg' : image.style.rotate})`,
-                zIndex: isExpanded ? 50 : image.style.zIndex,
+                width: image.style.width,
+                height: image.style.height,
+                transform: `rotate(${isHovered ? '0deg' : image.style.rotate}) scale(${isHovered ? 1.35 : isOtherHovered ? 0.97 : 1})`,
+                zIndex: isHovered ? 50 : image.style.zIndex,
             }}
         >
             <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-700"
+                className="w-full h-full object-cover"
                 draggable={false}
             />
-            {/* Label that appears on hover or when expanded */}
-            <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+            {/* Label overlay */}
+            <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}>
-                <span className="text-white text-xs font-medium tracking-wider uppercase">{image.label}</span>
+                <span className="text-white text-sm font-semibold tracking-wide">{image.label}</span>
             </div>
-            {/* Expand indicator */}
-            {!isExpanded && (
-                <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </div>
-            )}
-        </button>
+        </div>
     );
 };
 
+// ─── Kindling Labs Gamified Widget ──────────────────────────────
+const KindlingLabsWidget = () => {
+    const [activeTab, setActiveTab] = useState('status');
+    const [typedText, setTypedText] = useState('');
+    const [showCursor, setShowCursor] = useState(true);
+    const fullText = '> building something new...';
+
+    // Typewriter effect
+    useEffect(() => {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i <= fullText.length) {
+                setTypedText(fullText.slice(0, i));
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, 80);
+        return () => clearInterval(interval);
+    }, []);
+
+    // Blinking cursor
+    useEffect(() => {
+        const interval = setInterval(() => setShowCursor(prev => !prev), 530);
+        return () => clearInterval(interval);
+    }, []);
+
+    const milestones = [
+        { label: 'Idea validated', done: true },
+        { label: 'MVP shipped', done: true },
+        { label: 'Beta users onboarded', done: true },
+        { label: 'Product-market fit', done: false, active: true },
+        { label: 'Scale', done: false },
+    ];
+
+    const stats = [
+        { label: 'Products shipped', value: '5', icon: Rocket },
+        { label: 'Lines of code', value: '42k', icon: Terminal },
+        { label: 'Active users', value: '10k+', icon: Zap },
+    ];
+
+    return (
+        <div className="glass rounded-2xl overflow-hidden max-w-sm w-full">
+            {/* Header */}
+            <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-200/50 dark:border-white/10">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                    <Flame size={16} className="text-white" />
+                </div>
+                <div>
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white">Kindling Labs</div>
+                    <div className="text-[11px] text-green-600 dark:text-green-400 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                        Currently building
+                    </div>
+                </div>
+            </div>
+
+            {/* Tabs */}
+            <div className="flex border-b border-gray-200/50 dark:border-white/10">
+                {['status', 'stats', 'log'].map(tab => (
+                    <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`flex-1 py-2.5 text-[11px] font-semibold uppercase tracking-wider transition-all
+                            ${activeTab === tab
+                                ? 'text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-white'
+                                : 'text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400'
+                            }`}
+                    >
+                        {tab}
+                    </button>
+                ))}
+            </div>
+
+            {/* Tab Content */}
+            <div className="p-5 min-h-[180px]">
+                {activeTab === 'status' && (
+                    <div className="space-y-3">
+                        {milestones.map((m, i) => (
+                            <div key={i} className="flex items-center gap-3">
+                                {m.done ? (
+                                    <CheckCircle2 size={16} className="text-green-500 shrink-0" />
+                                ) : m.active ? (
+                                    <Loader2 size={16} className="text-orange-500 animate-spin shrink-0" />
+                                ) : (
+                                    <Circle size={16} className="text-gray-300 dark:text-gray-700 shrink-0" />
+                                )}
+                                <span className={`text-sm ${m.done
+                                        ? 'text-gray-500 dark:text-gray-400 line-through'
+                                        : m.active
+                                            ? 'text-gray-900 dark:text-white font-medium'
+                                            : 'text-gray-400 dark:text-gray-600'
+                                    }`}>
+                                    {m.label}
+                                </span>
+                                {m.active && (
+                                    <span className="ml-auto text-[10px] bg-orange-100 dark:bg-orange-500/20 text-orange-700 dark:text-orange-400 px-2 py-0.5 rounded-full font-semibold">
+                                        IN PROGRESS
+                                    </span>
+                                )}
+                            </div>
+                        ))}
+                        {/* Progress bar */}
+                        <div className="mt-4 pt-3 border-t border-gray-100 dark:border-white/5">
+                            <div className="flex justify-between text-[11px] text-gray-500 mb-1.5">
+                                <span>Progress</span>
+                                <span>60%</span>
+                            </div>
+                            <div className="h-2 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+                                <div className="h-full w-[60%] bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-1000"></div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === 'stats' && (
+                    <div className="space-y-4">
+                        {stats.map((stat, i) => (
+                            <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
+                                <div className="flex items-center gap-3">
+                                    <stat.icon size={16} className="text-gray-500 dark:text-gray-400" />
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</span>
+                                </div>
+                                <span className="text-lg font-bold text-gray-900 dark:text-white">{stat.value}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {activeTab === 'log' && (
+                    <div className="font-mono text-xs leading-relaxed space-y-1.5">
+                        <div className="text-green-600 dark:text-green-400">✓ deployed v2.4.1 to production</div>
+                        <div className="text-gray-500 dark:text-gray-500">  2 hours ago</div>
+                        <div className="text-blue-600 dark:text-blue-400 mt-3">→ refactoring auth module</div>
+                        <div className="text-gray-500 dark:text-gray-500">  in progress</div>
+                        <div className="text-gray-400 dark:text-gray-600 mt-3">⊘ planning: analytics dashboard v3</div>
+                        <div className="text-gray-500 dark:text-gray-500">  queued</div>
+                        <div className="mt-4 pt-3 border-t border-gray-100 dark:border-white/5 text-gray-500">
+                            {typedText}
+                            <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>▊</span>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+// ─── Home Page ──────────────────────────────────────────────────
 const Home = () => {
     const navigate = useNavigate();
-    const [expandedIndex, setExpandedIndex] = useState(null);
-
-    const handleToggle = useCallback((index) => {
-        setExpandedIndex(prev => prev === index ? null : index);
-    }, []);
-
-    // Close expanded image on Escape
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.key === 'Escape') setExpandedIndex(null);
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -113,7 +238,7 @@ const Home = () => {
                 <div className="absolute bottom-[20%] right-[10%] w-[40vw] h-[40vw] bg-blue-300/20 dark:bg-blue-900/10 rounded-full blur-[120px]" style={{ animationDuration: '7s' }}></div>
             </div>
 
-            {/* Hero Section with Scattered Images */}
+            {/* Hero Section */}
             <section className="relative min-h-screen overflow-hidden">
                 {/* Text Content — Left Side */}
                 <div className="container-custom flex flex-col justify-center min-h-screen py-32 relative z-10">
@@ -127,8 +252,13 @@ const Home = () => {
                         </h1>
 
                         <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-400 leading-relaxed mb-12 max-w-md">
-                            Operating at the intersection of strategy, software, and community. Currently building <span className="text-gray-900 dark:text-white font-medium">Kindling Labs</span>.
+                            Operating at the intersection of strategy, software, and community.
                         </p>
+
+                        {/* Kindling Labs Widget */}
+                        <div className="mb-12">
+                            <KindlingLabsWidget />
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
                             <button onClick={() => navigate('/projects')} className="btn btn-primary group px-8 py-4 text-base tracking-wide">
@@ -143,17 +273,15 @@ const Home = () => {
                 </div>
 
                 {/* Scattered Images — Right Side (Desktop Only) */}
-                <div className="absolute inset-0 hidden lg:block pointer-events-auto" onClick={(e) => {
-                    // Click on backdrop to close expanded image
-                    if (e.target === e.currentTarget) setExpandedIndex(null);
-                }}>
+                <div className="absolute inset-0 hidden lg:block">
                     {scatteredImages.map((image, index) => (
                         <ScatteredPhoto
                             key={index}
                             image={image}
                             index={index}
-                            expandedIndex={expandedIndex}
-                            onToggle={handleToggle}
+                            hoveredIndex={hoveredIndex}
+                            onHover={setHoveredIndex}
+                            onLeave={() => setHoveredIndex(null)}
                         />
                     ))}
                 </div>
@@ -162,7 +290,7 @@ const Home = () => {
                 <div className="lg:hidden px-6 pb-12 -mt-8">
                     <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4">
                         {scatteredImages.map((image, index) => (
-                            <div key={index} className="shrink-0 w-48 h-32 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-white/10">
+                            <div key={index} className="shrink-0 w-56 h-36 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-white/10">
                                 <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
                             </div>
                         ))}
