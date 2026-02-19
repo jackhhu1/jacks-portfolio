@@ -42,8 +42,8 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 w-full z-50 pointer-events-none">
             <div className={`container-custom flex items-center h-20 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isScrolled ? 'justify-center' : 'justify-between'
                 }`}>
-                {/* Logo — slides to center on scroll */}
-                <div className={`pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isScrolled ? 'absolute left-1/2 -translate-x-1/2' : ''
+                {/* Logo — fades out/hides on scroll */}
+                <div className={`pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isScrolled ? 'opacity-0 -translate-y-10 pointer-events-none' : 'opacity-100 translate-y-0'
                     }`}>
                     <Link to="/" className="text-xl font-bold tracking-tighter text-gray-900 dark:text-white hover:opacity-80 transition-opacity">
                         Jack Hu
@@ -52,20 +52,20 @@ const Navbar = () => {
 
                 {/* Desktop Navigation Floating Pill — fades in on scroll */}
                 <div className={`hidden md:flex items-center pointer-events-auto transition-all duration-500 ${isScrolled
-                        ? 'fixed top-20 left-1/2 -translate-x-1/2 opacity-100 translate-y-0'
-                        : 'opacity-100 translate-y-0'
+                    ? 'fixed top-6 left-1/2 -translate-x-1/2 opacity-100 translate-y-0'
+                    : 'opacity-100 translate-y-0'
                     }`}>
                     <div className={`flex items-center gap-1 backdrop-blur-md rounded-full p-1.5 shadow-xl transition-all duration-500 ${isScrolled
-                            ? 'bg-white/80 dark:bg-white/10 border border-gray-200/50 dark:border-white/10 shadow-lg'
-                            : 'bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-white/10'
+                        ? 'bg-white/80 dark:bg-white/10 border border-gray-200/50 dark:border-white/10 shadow-lg'
+                        : 'bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-white/10'
                         }`}>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
                                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${isActive(link.path)
-                                        ? 'bg-gray-900 text-white dark:bg-white dark:text-black shadow-sm'
-                                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/5'
+                                    ? 'bg-gray-900 text-white dark:bg-white dark:text-black shadow-sm'
+                                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/5'
                                     }`}
                             >
                                 {link.name}
