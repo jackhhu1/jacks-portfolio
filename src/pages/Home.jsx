@@ -2,6 +2,7 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import { ArrowRight, Flame } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ProjectShowcase from '../components/ProjectShowcase';
+import KindlingLogoPng from '../assets/KindlingLogo.png';
 
 // ─── Scattered Images ───────────────────────────────────────────
 const scatteredImages = [
@@ -81,8 +82,8 @@ const ScatteredPhoto = ({ image, index, hoveredIndex, onHover, onLeave }) => {
 const KindlingLabsWidget = () => {
     return (
         <div className="glass rounded-2xl overflow-hidden max-w-sm w-full p-5 flex items-center gap-4 border border-gray-200/50 dark:border-white/10 hover:border-orange-500/30 transition-colors cursor-pointer group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform duration-300">
-                <Flame size={24} className="text-white" />
+            <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <img src={KindlingLogoPng} alt="Kindling Labs" className="w-full h-full object-cover rounded-xl" />
             </div>
             <div>
                 <div className="text-base font-bold text-gray-900 dark:text-white mb-0.5 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Kindling Labs</div>
