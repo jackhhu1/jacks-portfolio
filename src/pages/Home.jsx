@@ -15,10 +15,10 @@ const Home = () => {
                         Jack Hu
                     </h1>
                     <h2 className="text-2xl md:text-3xl font-medium text-gray-900 dark:text-white mb-6">
-                        Strategy-driven builder.
+                        Building scalable systems
                     </h2>
                     <p className="text-xl md:text-2xl font-light text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-                        Turning ambiguous problems into scalable systems.
+                        Across student organizations, investment business lines and software
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">

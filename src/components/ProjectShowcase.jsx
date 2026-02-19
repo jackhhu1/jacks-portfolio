@@ -10,8 +10,8 @@ const ProjectShowcase = () => {
         {
             id: 'enactus',
             title: 'Enactus',
-            category: 'Social Entrepreneurship',
-            description: 'Leading a team of 150+ students to build sustainable social enterprises.',
+            category: 'Social Impact',
+            description: 'Scaled the UniMelb chapter, achieving 3x revenue growth, highest ever retention and NPS improvement from 51-90.',
             metrics: [
                 { label: 'Team Size', value: '150+', icon: Users },
                 { label: 'Revenue', value: '$50k+', icon: TrendingUp },
