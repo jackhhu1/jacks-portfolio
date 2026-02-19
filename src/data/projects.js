@@ -54,11 +54,11 @@ export const projects = [
         }
     },
     {
-        id: "venture-scale",
-        title: "Venture Scale Strategy",
-        summary: "Led growth strategy for a Series B fintech startup, resulting in 200% ARR growth in 12 months.",
-        tags: ["Strategy", "Growth", "Leadership"],
-        date: "2024",
+        id: "hackathon",
+        title: "Stanford x Flower Hackathon Winner",
+        summary: "Competed against ~200 attendees including professionals from Meta, Apple, Google, Amazon and IBM",
+        tags: ["Product", "AI", "Design"],
+        date: "2025",
         content: {
             problem: "The company had hit a growth plateau at $5M ARR. CAC was increasing, and retention was slipping due to a lack of clear product positioning in a crowded market.",
             context: "I was brought in as interim Head of Growth to diagnose the bottleneck and implement a scalable acquisition engine.",
@@ -72,9 +72,9 @@ export const projects = [
         }
     },
     {
-        id: "ai-architecture",
-        title: "AI Product Architecture",
-        summary: "Designed and shipped a generative AI-powered knowledge base for enterprise clients.",
+        id: "ai",
+        title: "AI Data Analyst",
+        summary: "Oversaw data quality for a leading AI lab, clients include Anthropic, Google, Eleven Labs and more",
         tags: ["Product", "AI", "Engineering"],
         date: "2023",
         content: {
@@ -90,10 +90,10 @@ export const projects = [
         }
     },
     {
-        id: "ops-system",
-        title: "Operational Excellence System",
-        summary: "Refactored internal operations for a 50-person agency to optimize delivery margins by 30%.",
-        tags: ["Operations", "Systems", "Consulting"],
+        id: "growth-unyouth",
+        title: "UN Youth Growth",
+        summary: "Led external communications for UN Youth Victoria to grow social media engagement 198%, engaged 1201+ students in events",
+        tags: ["Social Media", "Growth", "Operations"],
         date: "2023",
         content: {
             problem: "Delivery margins were eroding (from 60% to 35%) as the agency scaled headcount. Projects were consistently over-budget due to scope creep.",

@@ -181,7 +181,7 @@ const Home = () => {
                 <div className="container-custom flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
                     <div>
                         <h2 className="text-4xl font-medium tracking-tight mb-4 text-gray-900 dark:text-white">Let's build something.</h2>
-                        <p className="text-gray-600 dark:text-gray-500 max-w-md">Open to select advisory roles and interesting conversations.</p>
+                        <p className="text-gray-600 dark:text-gray-500 max-w-md">Open to interesting conversations.</p>
                     </div>
                     <button onClick={() => navigate('/contact')} className="group flex items-center gap-4 text-2xl font-light text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
                         Get in touch
