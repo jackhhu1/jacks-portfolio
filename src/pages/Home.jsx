@@ -1,6 +1,7 @@
 
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import ProjectShowcase from '../components/ProjectShowcase';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -33,8 +34,10 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Section 1 - Strategy */}
-            <section className="py-24 md:py-32 border-b border-gray-100 dark:border-neutral-800">
+            {/* New Interactive Project Showcase */}
+            <ProjectShowcase />
+
+            {/* <section className="py-24 md:py-32 border-b border-gray-100 dark:border-neutral-800">
                 <div className="container-custom grid md:grid-cols-[240px_1fr] gap-12">
                     <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mt-2">01 Strategy</h2>
                     <div className="max-w-2xl">
@@ -53,7 +56,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Section 2 - Build */}
             <section className="py-24 md:py-32 border-b border-gray-100 dark:border-neutral-800 bg-gray-50/50 dark:bg-neutral-900/20">
                 <div className="container-custom grid md:grid-cols-[240px_1fr] gap-12">
                     <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mt-2">02 Build</h2>
@@ -73,7 +75,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Section 3 - Lead */}
             <section className="py-24 md:py-32 border-b border-gray-100 dark:border-neutral-800">
                 <div className="container-custom grid md:grid-cols-[240px_1fr] gap-12">
                     <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mt-2">03 Lead</h2>
@@ -93,7 +94,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Section 4 - Interests */}
             <section className="py-24 md:py-32">
                 <div className="container-custom grid md:grid-cols-[240px_1fr] gap-12">
                     <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mt-2">04 Interests</h2>
@@ -112,7 +112,7 @@ const Home = () => {
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };

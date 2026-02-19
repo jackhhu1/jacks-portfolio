@@ -1,5 +1,59 @@
 export const projects = [
     {
+        id: "enactus",
+        title: "Enactus",
+        summary: "Led a team of 150+ students to build sustainable social enterprises, generating $50k+ in revenue.",
+        tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
+        date: "2023 - Present",
+        content: {
+            problem: "Student-led social enterprises often struggle with continuity and scalability due to high member turnover and lack of structured business models.",
+            context: "As President of the Enactus chapter, I led a multidisciplinary team of 150+ students across 5 distinct impact projects.",
+            constraints: "Zero initial funding; volunteer-based workforce; need to balance social impact with financial sustainability.",
+            process: `
+1. **Structural Overhaul**: Restructured the organization into functional departments (Product, Marketing, Finance) rather than just project silos.
+2. **Partnership Strategy**: Secured corporate sponsorships and mentorships to professionalize our approach.
+3. **Training Pipeline**: Implemented a 'social innovation incubator' curriculum to train new members.`,
+            outcome: "Grew membership by 50%. Projects generated $50k+ in revenue. Recognized as a National Champion team.",
+            lessons: "Leadership is about creating an environment where others can succeed. Structure enables creativity in volunteer teams."
+        }
+    },
+    {
+        id: "caprae",
+        title: "Caprae",
+        summary: "Established a sustainable outdoor apparel brand from zero to international launch in 3 countries.",
+        tags: ["Brand Strategy", "DTC", "Sustainability"],
+        date: "2023",
+        content: {
+            problem: "The outdoor apparel market is saturated with synthetic materials. There was a gap for high-performance, purely organic gear that didn't compromise on aesthetics.",
+            context: "Co-founded Caprae to bring a new philosophy of 'natural performance' to the outdoor industry.",
+            constraints: "Bootstrapped budget; complex global supply chain logistics; high competition from established giants.",
+            process: `
+1. **Brand Identity**: Crafted a minimalist, nature-first brand identity focusing on 'the goat' (Caprae) as a symbol of rugged adaptability.
+2. **Supply Chain**: Sourced GOTS-certified organic cotton and wool manufacturers in Portugal.
+3. **Launch Strategy**: Executed a targeted influencer campaign and pop-up events in key urban centers.`,
+            outcome: "Sold out initial inventory in 2 weeks. Expanded distribution to 3 countries. Featured in niche outdoor publications.",
+            lessons: "A strong brand story is the most efficient marketing channel. Authenticity scales."
+        }
+    },
+    {
+        id: "kindling-labs",
+        title: "Kindling Labs",
+        summary: "A rapid prototyping lab shipping experimental software products. 5 products shipped.",
+        tags: ["Software Engineering", "Product", "R&D"],
+        date: "2024",
+        content: {
+            problem: "Many software ideas die in the 'validation' phase. We wanted to build a system for rapidly testing and shipping ideas.",
+            context: "Kindling Labs is my personal software studio for rapid experimentation and product development.",
+            constraints: "Solo developer bandwidth; need for speed; varying tech stacks.",
+            process: `
+1. **The 'Ship in a Weekend' Rule**: If the MVP can't be built in a weekend, the scope is too big.
+2. **Reusable Architecture**: Built a core boilerplate (Next.js, Supabase, Tailwind) to eliminate setup time.
+3. **Feedback Loops**: Immediate deployment to user communities for real-world feedback.`,
+            outcome: "Shipped 5 functional products. 'Kindle' (a note-taking app) reached 10k+ users. Refined a repeatable build process.",
+            lessons: "Perfection is the enemy of shipping. Real user feedback is the only valid metric."
+        }
+    },
+    {
         id: "venture-scale",
         title: "Venture Scale Strategy",
         summary: "Led growth strategy for a Series B fintech startup, resulting in 200% ARR growth in 12 months.",
