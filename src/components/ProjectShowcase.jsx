@@ -51,8 +51,8 @@ const ProjectShowcase = () => {
     return (
         <section className="py-24 border-b border-gray-100 dark:border-neutral-800">
             <div className="container-custom mb-12">
-                <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-2">Selected Work</h2>
-                <h3 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white">
+                <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-2">Selected Work</h2>
+                <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 dark:text-white/90">
                     Impact through creation.
                 </h3>
             </div>
