@@ -2,6 +2,7 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import { ArrowRight, Flame } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ProjectShowcase from '../components/ProjectShowcase';
+import LogoMarquee from '../components/LogoMarquee';
 import KindlingLogoPng from '../assets/KindlingLogo.png';
 
 // ─── Scattered Images ───────────────────────────────────────────
@@ -174,6 +175,7 @@ const Home = () => {
             </section>
 
             {/* Project Showcase */}
+            <LogoMarquee />
             <ProjectShowcase />
 
             {/* Footer / Contact CTA */}

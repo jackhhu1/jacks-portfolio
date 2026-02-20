@@ -1,4 +1,6 @@
 import KindlingLogoPng from '../assets/KindlingLogo.png';
+import EnactusLogo from '../assets/enactusLogo.png';
+import CapraeLogo from '../assets/caprae_capital_logo.jpeg';
 
 // Tag color mapping — subtle, outlined pills per tag
 // Used by both Projects.jsx and ProjectDetail.jsx
@@ -42,8 +44,9 @@ export const projects = [
         tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
         date: "2023 - 2024",
         featured: true,
-        icon: "🏛️",
-        iconBg: "bg-orange-500/15",
+        icon: null,
+        iconImage: EnactusLogo,
+        iconBg: "bg-white",
         accent: "from-orange-500 to-red-600",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
@@ -65,8 +68,9 @@ export const projects = [
         tags: ["Strategy", "Private Equity", "Leadership"],
         date: "2024 - 2025",
         featured: true,
-        icon: "📈",
-        iconBg: "bg-emerald-500/15",
+        icon: null,
+        iconImage: CapraeLogo,
+        iconBg: "bg-white",
         accent: "from-emerald-600 to-teal-800",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
@@ -84,7 +88,7 @@ export const projects = [
     {
         id: "kindling-labs",
         title: "Kindling Labs",
-        summary: "Full product lifecycle development for software. 1 product shipped in a month, 2 in development.",
+        summary: "Full product lifecycle development for software. Developed TMYS - more in pipeline",
         tags: ["Software Engineering", "Product", "R&D"],
         date: "2025-2026",
         featured: true,
