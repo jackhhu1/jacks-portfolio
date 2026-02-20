@@ -1,33 +1,35 @@
-// Tag color mapping — each tag gets a unique vibrant color pill
-// This is used by both Projects.jsx and ProjectDetail.jsx
+import KindlingLogoPng from '../assets/KindlingLogo.png';
+
+// Tag color mapping — subtle, outlined pills per tag
+// Used by both Projects.jsx and ProjectDetail.jsx
 export const tagColors = {
     // Strategy & Business
-    "Strategy": { bg: "bg-violet-100 dark:bg-violet-500/20", text: "text-violet-700 dark:text-violet-300", border: "border-violet-200 dark:border-violet-500/30" },
-    "Leadership": { bg: "bg-amber-100 dark:bg-amber-500/20", text: "text-amber-700 dark:text-amber-300", border: "border-amber-200 dark:border-amber-500/30" },
-    "Private Equity": { bg: "bg-emerald-100 dark:bg-emerald-500/20", text: "text-emerald-700 dark:text-emerald-300", border: "border-emerald-200 dark:border-emerald-500/30" },
+    "Strategy": { bg: "bg-violet-500/10", text: "text-violet-400", border: "border-violet-500/20" },
+    "Leadership": { bg: "bg-amber-500/10", text: "text-amber-400", border: "border-amber-500/20" },
+    "Private Equity": { bg: "bg-emerald-500/10", text: "text-emerald-400", border: "border-emerald-500/20" },
 
     // Social & Community
-    "Social Entrepreneurship": { bg: "bg-rose-100 dark:bg-rose-500/20", text: "text-rose-700 dark:text-rose-300", border: "border-rose-200 dark:border-rose-500/30" },
-    "Non-Profit": { bg: "bg-pink-100 dark:bg-pink-500/20", text: "text-pink-700 dark:text-pink-300", border: "border-pink-200 dark:border-pink-500/30" },
-    "Community": { bg: "bg-orange-100 dark:bg-orange-500/20", text: "text-orange-700 dark:text-orange-300", border: "border-orange-200 dark:border-orange-500/30" },
+    "Social Entrepreneurship": { bg: "bg-rose-500/10", text: "text-rose-400", border: "border-rose-500/20" },
+    "Non-Profit": { bg: "bg-pink-500/10", text: "text-pink-400", border: "border-pink-500/20" },
+    "Community": { bg: "bg-orange-500/10", text: "text-orange-400", border: "border-orange-500/20" },
 
     // Tech & Engineering
-    "Software Engineering": { bg: "bg-blue-100 dark:bg-blue-500/20", text: "text-blue-700 dark:text-blue-300", border: "border-blue-200 dark:border-blue-500/30" },
-    "Product": { bg: "bg-indigo-100 dark:bg-indigo-500/20", text: "text-indigo-700 dark:text-indigo-300", border: "border-indigo-200 dark:border-indigo-500/30" },
-    "AI": { bg: "bg-cyan-100 dark:bg-cyan-500/20", text: "text-cyan-700 dark:text-cyan-300", border: "border-cyan-200 dark:border-cyan-500/30" },
-    "Engineering": { bg: "bg-sky-100 dark:bg-sky-500/20", text: "text-sky-700 dark:text-sky-300", border: "border-sky-200 dark:border-sky-500/30" },
-    "R&D": { bg: "bg-teal-100 dark:bg-teal-500/20", text: "text-teal-700 dark:text-teal-300", border: "border-teal-200 dark:border-teal-500/30" },
-    "Design": { bg: "bg-fuchsia-100 dark:bg-fuchsia-500/20", text: "text-fuchsia-700 dark:text-fuchsia-300", border: "border-fuchsia-200 dark:border-fuchsia-500/30" },
+    "Software Engineering": { bg: "bg-blue-500/10", text: "text-blue-400", border: "border-blue-500/20" },
+    "Product": { bg: "bg-indigo-500/10", text: "text-indigo-400", border: "border-indigo-500/20" },
+    "AI": { bg: "bg-cyan-500/10", text: "text-cyan-400", border: "border-cyan-500/20" },
+    "Engineering": { bg: "bg-sky-500/10", text: "text-sky-400", border: "border-sky-500/20" },
+    "R&D": { bg: "bg-teal-500/10", text: "text-teal-400", border: "border-teal-500/20" },
+    "Design": { bg: "bg-fuchsia-500/10", text: "text-fuchsia-400", border: "border-fuchsia-500/20" },
 
     // Ops & Growth
-    "Social Media": { bg: "bg-red-100 dark:bg-red-500/20", text: "text-red-700 dark:text-red-300", border: "border-red-200 dark:border-red-500/30" },
-    "Growth": { bg: "bg-lime-100 dark:bg-lime-500/20", text: "text-lime-700 dark:text-lime-300", border: "border-lime-200 dark:border-lime-500/30" },
-    "Operations": { bg: "bg-yellow-100 dark:bg-yellow-500/20", text: "text-yellow-700 dark:text-yellow-300", border: "border-yellow-200 dark:border-yellow-500/30" },
-    "Logistics": { bg: "bg-stone-100 dark:bg-stone-500/20", text: "text-stone-700 dark:text-stone-300", border: "border-stone-200 dark:border-stone-500/30" },
+    "Social Media": { bg: "bg-red-500/10", text: "text-red-400", border: "border-red-500/20" },
+    "Growth": { bg: "bg-lime-500/10", text: "text-lime-400", border: "border-lime-500/20" },
+    "Operations": { bg: "bg-yellow-500/10", text: "text-yellow-400", border: "border-yellow-500/20" },
+    "Logistics": { bg: "bg-stone-500/10", text: "text-stone-400", border: "border-stone-500/20" },
 };
 
-// Default tag color for any tags not in the map
-export const defaultTagColor = { bg: "bg-gray-100 dark:bg-neutral-800", text: "text-gray-600 dark:text-gray-300", border: "border-gray-200 dark:border-neutral-700" };
+// Default tag color
+export const defaultTagColor = { bg: "bg-neutral-500/10", text: "text-neutral-400", border: "border-neutral-500/20" };
 
 // Helper to get tag color
 export const getTagColor = (tag) => tagColors[tag] || defaultTagColor;
@@ -35,13 +37,15 @@ export const getTagColor = (tag) => tagColors[tag] || defaultTagColor;
 export const projects = [
     {
         id: "enactus",
-        title: "Enactus President",
+        title: "Enactus",
         summary: "Led an organizational transformation for 70 members, tripling revenue ($25k -> $75k) and boosting NPS 51 -> 90.",
         tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
         date: "2023 - 2024",
         featured: true,
         icon: "🏛️",
+        iconBg: "bg-orange-500/15",
         accent: "from-orange-500 to-red-600",
+        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
             problem: "The university's Enactus chapter was struggling with low member engagement, fragmented project management, and stagnant revenue that limited the scale of social impact initiatives.",
             context: "As President, I inherited an organisation of 70 members running 5 social enterprise projects. Member NPS was at 51 and annual revenue sat at $25k — both well below national benchmarks.",
@@ -56,13 +60,15 @@ export const projects = [
     },
     {
         id: "caprae",
-        title: "Caprae Capital Strategy Lead",
+        title: "Caprae Capital",
         summary: "Scaled a new product line alongside CEO from 0->400k ARR. We helped close $50M worth of deals in the first year.",
         tags: ["Strategy", "Private Equity", "Leadership"],
         date: "2024 - 2025",
         featured: true,
         icon: "📈",
+        iconBg: "bg-emerald-500/15",
         accent: "from-emerald-600 to-teal-800",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
             problem: "The firm had a strong deal-sourcing engine but lacked a structured strategy product to help portfolio companies achieve post-acquisition value creation targets.",
             context: "Joined as Strategy Lead alongside the CEO to design and launch a new advisory product line from scratch — targeting mid-market private equity portfolio companies.",
@@ -77,13 +83,16 @@ export const projects = [
     },
     {
         id: "kindling-labs",
-        title: "Kindling Labs Founder",
+        title: "Kindling Labs",
         summary: "Full product lifecycle development for software. 1 product shipped in a month, 2 in development.",
         tags: ["Software Engineering", "Product", "R&D"],
-        date: "2024",
+        date: "2025-2026",
         featured: true,
-        icon: "🔥",
+        icon: null,
+        iconImage: KindlingLogoPng,
+        iconBg: "bg-neutral-800",
         accent: "from-blue-600 to-indigo-800",
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
             problem: "Too many ideas die in the planning phase. There's a gap between 'interesting concept' and 'shipped product' that solo builders struggle to cross consistently.",
             context: "Founded Kindling Labs as a personal software studio — a framework for rapidly validating, building, and shipping software products from concept to live users.",
@@ -99,11 +108,12 @@ export const projects = [
     {
         id: "hackathon",
         title: "Stanford x Flower Hackathon Winner",
-        summary: "Competed against ~200 attendees including professionals from Meta, Apple, Google, Amazon and IBM.",
+        summary: "Competed against ~200 attendees including professionals from Meta, Apple, Google, Amazon.",
         tags: ["Product", "AI", "Design"],
         date: "2025",
         featured: false,
         icon: "🏆",
+        iconBg: "bg-purple-500/15",
         accent: "from-purple-600 to-pink-600",
         content: {
             problem: "Federated learning remains largely inaccessible to non-ML practitioners. The challenge was to build a practical, user-friendly application leveraging Flower's federated learning framework.",
@@ -122,9 +132,10 @@ export const projects = [
         title: "AI Data Specialist",
         summary: "Oversaw data quality for a leading AI lab, clients include Anthropic, Google, Eleven Labs and more.",
         tags: ["Product", "AI", "Engineering"],
-        date: "2025",
+        date: "2025-2026",
         featured: false,
         icon: "🤖",
+        iconBg: "bg-cyan-500/15",
         accent: "from-cyan-500 to-blue-700",
         content: {
             problem: "AI model performance is bottlenecked by data quality. Leading AI labs needed rigorous, human-in-the-loop data curation to improve model outputs across reasoning, coding, and creative tasks.",
@@ -141,11 +152,12 @@ export const projects = [
     {
         id: "growth-unyouth",
         title: "UN Youth Growth",
-        summary: "Led external communications for UN Youth Victoria to grow social media engagement 198%, engaged 1201+ students in events.",
+        summary: "Grew social media engagement 198%, engaged 1201+ students in events.",
         tags: ["Social Media", "Growth", "Operations"],
         date: "2023",
         featured: false,
         icon: "🌍",
+        iconBg: "bg-sky-500/15",
         accent: "from-sky-500 to-blue-600",
         content: {
             problem: "UN Youth Victoria had strong programs but low visibility. Social media engagement was flat, event attendance was declining, and the brand wasn't reaching its target demographic of 15-25 year olds effectively.",
@@ -162,11 +174,12 @@ export const projects = [
     {
         id: "cadets",
         title: "Army Cadets Event Execution",
-        summary: "Led a state of 3250 youth members, ran 4 statewide and national activities for 100-300+ attendees over 8 days (each).",
+        summary: "Led a state of 3250 youth, ran 4 statewide and national activities for 100-300+ attendees over 8 days (each).",
         tags: ["Community", "Logistics", "Operations"],
         date: "2022",
         featured: false,
         icon: "⭐",
+        iconBg: "bg-stone-500/15",
         accent: "from-stone-600 to-neutral-800",
         content: {
             problem: "Large-scale youth activities (100-300+ attendees over 8 days) require military-grade logistics planning. Previous events suffered from poor coordination, inconsistent safety standards, and low cadet satisfaction scores.",

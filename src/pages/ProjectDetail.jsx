@@ -7,7 +7,7 @@ import { ArrowLeft, Calendar, AlertCircle, TrendingUp, Lightbulb } from 'lucide-
 const TagPill = ({ tag }) => {
     const color = getTagColor(tag);
     return (
-        <span className={`inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full border ${color.bg} ${color.text} ${color.border}`}>
+        <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${color.bg} ${color.text} ${color.border}`}>
             {tag}
         </span>
     );
@@ -37,17 +37,21 @@ const ProjectDetail = () => {
 
             <header className="mb-12 animate-slide-up">
                 {/* Icon + Tags row */}
-                <div className="flex items-center gap-3 mb-4">
-                    {project.icon && (
-                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${project.accent} flex items-center justify-center text-lg shadow-lg`}>
+                <div className="flex items-center gap-3 mb-4 flex-wrap">
+                    {project.iconImage ? (
+                        <div className={`w-10 h-10 rounded-xl ${project.iconBg || 'bg-neutral-800'} flex items-center justify-center overflow-hidden`}>
+                            <img src={project.iconImage} alt={project.title} className="w-full h-full object-cover rounded-xl" />
+                        </div>
+                    ) : project.icon ? (
+                        <div className={`w-10 h-10 rounded-xl ${project.iconBg || 'bg-neutral-800'} flex items-center justify-center text-lg`}>
                             {project.icon}
                         </div>
-                    )}
-                    <div className="flex flex-wrap gap-2">
+                    ) : null}
+                    <div className="flex flex-wrap gap-1.5">
                         {project.tags.map(tag => (
                             <TagPill key={tag} tag={tag} />
                         ))}
-                        <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-gray-50 dark:bg-neutral-900 text-gray-500 border border-gray-200 dark:border-neutral-800 flex items-center gap-1">
+                        <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border bg-neutral-500/10 text-neutral-400 border-neutral-500/20 gap-1">
                             <Calendar size={10} /> {project.date}
                         </span>
                     </div>
