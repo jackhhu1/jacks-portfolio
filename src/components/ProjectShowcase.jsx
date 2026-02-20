@@ -1,52 +1,51 @@
 import { useState } from 'react';
 import { ArrowUpRight, Users, TrendingUp, Code, Globe, Shirt } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { projects as allProjects, getTagColor } from '../data/projects';
 
 const ProjectShowcase = () => {
     const navigate = useNavigate();
     const [activeProject, setActiveProject] = useState(null);
 
-    const projects = [
-        {
-            id: 'enactus',
-            title: 'Enactus',
+    // Pull featured projects from the shared data source, with showcase-specific enrichment
+    const showcaseData = {
+        'enactus': {
             category: 'Social Impact',
-            description: 'Scaled the UniMelb chapter, achieving 3x revenue growth, highest ever retention and NPS improvement from 51-90.',
             metrics: [
-                { label: 'Team Size', value: '150+', icon: Users },
-                { label: 'Revenue', value: '$50k+', icon: TrendingUp },
+                { label: 'Team Size', value: '70+', icon: Users },
+                { label: 'Revenue', value: '3x', icon: TrendingUp },
             ],
             color: 'from-orange-500 to-red-600',
-            image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', // Placeholder: Team collaboration
-            path: '/projects/enactus'
+            image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
         },
-        {
-            id: 'caprae',
-            title: 'Caprae',
-            category: 'Brand Strategy',
-            description: 'Building a sustainable outdoor apparel brand from zero to international launch.',
+        'caprae': {
+            category: 'Strategy',
             metrics: [
-                { label: 'Reach', value: '3 Countries', icon: Globe },
-                { label: 'Product', value: '100% Organic', icon: Shirt },
+                { label: 'ARR', value: '$400k', icon: TrendingUp },
+                { label: 'Deals', value: '$50M', icon: Globe },
             ],
             color: 'from-emerald-600 to-teal-800',
-            image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80', // Placeholder: Fashion/Coat
-            path: '/projects/caprae'
+            image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80',
         },
-        {
-            id: 'kindling-labs',
-            title: 'Kindling Labs',
+        'kindling-labs': {
             category: 'Software Studio',
-            description: 'A rapid prototyping lab shipping experimental software products.',
             metrics: [
-                { label: 'Shipped', value: '5 Products', icon: Code },
-                { label: 'Users', value: '10k+', icon: Users },
+                { label: 'Shipped', value: '1 Product', icon: Code },
+                { label: 'In Dev', value: '2 More', icon: Code },
             ],
             color: 'from-blue-600 to-indigo-800',
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', // Placeholder: Tech/Code
-            path: '/projects/kindling-labs'
-        }
-    ];
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        },
+    };
+
+    const featuredProjects = allProjects
+        .filter(p => p.featured && showcaseData[p.id])
+        .map(p => ({
+            ...p,
+            ...showcaseData[p.id],
+            path: `/projects/${p.id}`,
+            description: p.summary,
+        }));
 
     return (
         <section className="py-24 border-b border-gray-100 dark:border-neutral-800">
@@ -59,7 +58,7 @@ const ProjectShowcase = () => {
 
             <div className="container-custom">
                 <div className="flex flex-col lg:flex-row gap-6 h-[800px] lg:h-[600px] transition-all duration-500 ease-out">
-                    {projects.map((project) => (
+                    {featuredProjects.map((project) => (
                         <div
                             key={project.id}
                             onMouseEnter={() => setActiveProject(project.id)}
