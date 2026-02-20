@@ -175,8 +175,9 @@ const Home = () => {
             </section>
 
             {/* Project Showcase */}
-            <LogoMarquee />
             <ProjectShowcase />
+
+            <LogoMarquee />
 
             {/* Footer / Contact CTA */}
             <section className="py-32 border-t border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-black/40">
