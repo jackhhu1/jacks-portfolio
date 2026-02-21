@@ -48,12 +48,12 @@ const ScatteredPhoto = ({ image, index, hoveredIndex, onHover, onLeave }) => {
         <div
             onMouseEnter={() => onHover(index)}
             onMouseLeave={onLeave}
-            className={`absolute cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-xl overflow-hidden shadow-2xl border-2 select-none
+            className={`absolute cursor-pointer pointer-events-auto rounded-xl overflow-hidden shadow-2xl border-2 select-none
                 ${isHovered
-                    ? 'z-50 border-white/40 dark:border-white/30 shadow-black/40 scale-[1.35]'
-                    : 'border-white/20 dark:border-white/10 hover:border-white/40 dark:hover:border-white/20'
+                    ? 'border-white/40 dark:border-white/30 shadow-black/40'
+                    : 'border-white/20 dark:border-white/10'
                 }
-                ${isOtherHovered ? 'opacity-40 scale-[0.97] blur-[2px]' : 'opacity-100'}
+                ${isOtherHovered ? 'blur-[2px]' : ''}
             `}
             style={{
                 top: image.style.top,
@@ -61,7 +61,9 @@ const ScatteredPhoto = ({ image, index, hoveredIndex, onHover, onLeave }) => {
                 width: image.style.width,
                 height: image.style.height,
                 transform: `rotate(${isHovered ? '0deg' : image.style.rotate}) scale(${isHovered ? 1.35 : isOtherHovered ? 0.97 : 1})`,
+                opacity: isOtherHovered ? 0.4 : 1,
                 zIndex: isHovered ? 50 : image.style.zIndex,
+                transition: 'transform 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), filter 500ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease',
             }}
         >
             <img
@@ -71,8 +73,14 @@ const ScatteredPhoto = ({ image, index, hoveredIndex, onHover, onLeave }) => {
                 draggable={false}
             />
             {/* Label overlay */}
-            <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                }`}>
+            <div
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4"
+                style={{
+                    opacity: isHovered ? 1 : 0,
+                    transform: isHovered ? 'translateY(0)' : 'translateY(8px)',
+                    transition: 'opacity 300ms ease, transform 300ms ease',
+                }}
+            >
                 <span className="text-white text-sm font-semibold tracking-wide">{image.label}</span>
             </div>
         </div>
@@ -149,7 +157,7 @@ const Home = () => {
                 </div>
 
                 {/* Scattered Images — Right Side (Desktop Only) */}
-                <div className="absolute inset-0 hidden lg:block">
+                <div className="absolute inset-0 hidden lg:block z-20 pointer-events-none">
                     {scatteredImages.map((image, index) => (
                         <ScatteredPhoto
                             key={index}

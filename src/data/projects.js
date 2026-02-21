@@ -182,11 +182,74 @@ export const projects = [
         tags: ["Community", "Logistics", "Operations"],
         date: "2022",
         featured: false,
-        icon: "⭐",
+        icon: "🛡️",
         iconBg: "bg-stone-500/15",
         accent: "from-stone-600 to-neutral-800",
         content: {
             problem: "Large-scale youth activities (100-300+ attendees over 8 days) require military-grade logistics planning. Previous events suffered from poor coordination, inconsistent safety standards, and low cadet satisfaction scores.",
+            context: "Served in a senior leadership role within the Australian Army Cadets, responsible for planning and executing statewide and national activities across a state of 3,250 youth members.",
+            constraints: "Operating under strict Defence Force safety and governance protocols; coordinating across 30+ adult volunteers and instructors; managing logistics for remote training locations with limited infrastructure.",
+            process: `
+1. **Planning Framework**: Developed comprehensive activity plans covering risk assessments, logistics matrices, training schedules, and contingency protocols — months in advance.
+2. **Team Leadership**: Recruited, briefed, and managed teams of 30+ adult staff and senior cadets, running daily coordination meetings during activities.
+3. **Execution & Adaptation**: Ran 4 major activities across the year, each spanning 8 days. Managed real-time decision-making for weather disruptions, medical situations, and schedule adjustments.`,
+            outcome: "Successfully executed 4 statewide and national activities for 100-300+ attendees each. Achieved the highest cadet satisfaction scores in the unit's recent history. Zero critical safety incidents.",
+            lessons: "Planning is everything, but the plan is nothing — the ability to adapt in real-time while keeping 300 people safe and engaged is the real skill."
+        }
+    },
+    {
+        id: "AFR",
+        title: "AFR Top 100 Future Leaders",
+        summary: "Selected as one of 100 future leaders in Australia for building resilient communities",
+        tags: ["Leadership", "Recognition"],
+        date: "2024",
+        featured: false,
+        icon: "⭐",
+        iconBg: "bg-stone-500/15",
+        accent: "from-stone-600 to-neutral-800",
+        content: {
+            problem: "N/A",
+            context: "Selected by Gradconnection and Australian Financial Review to determine impactful young Australians",
+            constraints: "N/A",
+            process: "",
+            outcome: "",
+            lessons: "Just hit apply"
+        }
+    },
+    {
+        id: "sports",
+        title: "Coaching High Level Youth Sport",
+        summary: "Across soccer, tennis and athletics, I led 3 undefeated teams",
+        tags: ["Community", "Leadership", "Operations"],
+        date: "2022-2025",
+        featured: false,
+        icon: "🏆",
+        iconBg: "bg-stone-500/15",
+        accent: "from-stone-600 to-neutral-800",
+        content: {
+            problem: "  Large-scale youth activities (100-300+ attendees over 8 days) require military-grade logistics planning. Previous events suffered from poor coordination, inconsistent safety standards, and low cadet satisfaction scores.",
+            context: "Served in a senior leadership role within the Australian Army Cadets, responsible for planning and executing statewide and national activities across a state of 3,250 youth members.",
+            constraints: "Operating under strict Defence Force safety and governance protocols; coordinating across 30+ adult volunteers and instructors; managing logistics for remote training locations with limited infrastructure.",
+            process: `
+1. **Planning Framework**: Developed comprehensive activity plans covering risk assessments, logistics matrices, training schedules, and contingency protocols — months in advance.
+2. **Team Leadership**: Recruited, briefed, and managed teams of 30+ adult staff and senior cadets, running daily coordination meetings during activities.
+3. **Execution & Adaptation**: Ran 4 major activities across the year, each spanning 8 days. Managed real-time decision-making for weather disruptions, medical situations, and schedule adjustments.`,
+            outcome: "Successfully executed 4 statewide and national activities for 100-300+ attendees each. Achieved the highest cadet satisfaction scores in the unit's recent history. Zero critical safety incidents.",
+            lessons: "Planning is everything, but the plan is nothing — the ability to adapt in real-time while keeping 300 people safe and engaged is the real skill."
+        }
+    },
+    {
+        id: "soccer",
+        title: "Semi-Professional Soccer Player",
+        summary: "",
+        tags: ["Community", "Leadership", "Operations"],
+        date: "2023",
+        featured: false,
+        icon: "⚽",
+        iconBg: "bg-stone-500/15",
+        accent: "from-stone-600 to-neutral-800",
+        content: {
+            problem: "  Large-scale youth activities (100-300+ attendees over 8 days) require military-grade logistics planning. Previous events suffered from poor coordination, inconsistent safety standards, and low cadet satisfaction scores.",
             context: "Served in a senior leadership role within the Australian Army Cadets, responsible for planning and executing statewide and national activities across a state of 3,250 youth members.",
             constraints: "Operating under strict Defence Force safety and governance protocols; coordinating across 30+ adult volunteers and instructors; managing logistics for remote training locations with limited infrastructure.",
             process: `

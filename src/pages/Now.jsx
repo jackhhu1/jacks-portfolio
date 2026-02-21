@@ -51,7 +51,7 @@ const Now = () => {
                                     <span className="text-xs text-gray-400 font-mono">Hacking</span>
                                 </div>
                                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    Experimenting with local LLMs to create a semantic search engine for my 10 years of Obsidian notes.
+                                    Experimenting with content led growth, personal assistant AI and more.
                                 </p>
                             </a>
                         </li>
@@ -65,8 +65,8 @@ const Now = () => {
                     <div className="grid sm:grid-cols-2 gap-6">
                         <div className="bg-gray-50 dark:bg-neutral-900/50 p-5 rounded-lg border border-gray-100 dark:border-neutral-800">
                             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block">Book</span>
-                            <h3 className="font-medium text-gray-900 dark:text-white mb-2">"The Beginning of Infinity"</h3>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">David Deutsch</p>
+                            <h3 className="font-medium text-gray-900 dark:text-white mb-2">"Shoe Dog"</h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">Phil Knight</p>
                         </div>
                         <div className="bg-gray-50 dark:bg-neutral-900/50 p-5 rounded-lg border border-gray-100 dark:border-neutral-800">
                             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block">Paper</span>
