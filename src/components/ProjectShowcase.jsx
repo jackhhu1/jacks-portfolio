@@ -12,10 +12,10 @@ const ProjectShowcase = () => {
         'enactus': {
             category: 'Social Impact',
             metrics: [
-                { label: 'Team Size', value: '70+', icon: Users },
+                { label: 'Rank', value: 'World Top 16', icon: Globe },
                 { label: 'Revenue', value: '3x', icon: TrendingUp },
             ],
-            color: 'from-orange-500 to-red-600',
+            color: 'from-yellow-500 to-amber-600',
             image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
         },
         'caprae': {
@@ -24,7 +24,7 @@ const ProjectShowcase = () => {
                 { label: 'ARR', value: '$400k', icon: TrendingUp },
                 { label: 'Deals', value: '$50M', icon: Globe },
             ],
-            color: 'from-emerald-600 to-teal-800',
+            color: 'from-neutral-900 to-black',
             image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80',
         },
         'kindling-labs': {

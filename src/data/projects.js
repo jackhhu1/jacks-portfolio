@@ -40,14 +40,14 @@ export const projects = [
     {
         id: "enactus",
         title: "Enactus",
-        summary: "Led an organizational transformation for 70 members, tripling revenue ($25k -> $75k) and boosting NPS 51 -> 90.",
+        summary: "Led an organizational transformation for 70 members, tripling revenue ($25k -> $75k), boosting NPS 51 -> 90, and placing World Top 16.",
         tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
         date: "2023 - 2024",
         featured: true,
         icon: null,
         iconImage: EnactusLogo,
-        iconBg: "bg-white",
-        accent: "from-orange-500 to-red-600",
+        iconBg: "bg-yellow-400",
+        accent: "from-yellow-400 to-yellow-600",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
             problem: "The university's Enactus chapter was struggling with low member engagement, fragmented project management, and stagnant revenue that limited the scale of social impact initiatives.",
@@ -57,7 +57,7 @@ export const projects = [
 1. **Structural Overhaul**: Restructured the organisation from flat project silos into functional departments (Product, Marketing, Finance, People & Culture) to create clear ownership and career pathways.
 2. **Revenue Strategy**: Launched a tiered sponsorship model and secured 3 new corporate partners by aligning social impact reporting with sponsors' ESG objectives.
 3. **Culture & Retention**: Introduced a structured onboarding program, weekly retros, and an internal NPS tracking system to surface issues early and act on feedback.`,
-            outcome: "Tripled annual revenue from $25k to $75k. Lifted member NPS from 51 to 90. Achieved the highest member retention rate in the chapter's history. The team went on to be recognised at the National Competition.",
+            outcome: "Tripled annual revenue from $25k to $75k. Lifted member NPS from 51 to 90. Achieved the highest member retention rate in the chapter's history. The team went on to place World Top 16 at the Enactus World Cup.",
             lessons: "Leadership is about creating the conditions for others to succeed. Structuring volunteer teams like high-performance orgs doesn't kill culture — it amplifies it."
         }
     },
@@ -70,8 +70,8 @@ export const projects = [
         featured: true,
         icon: null,
         iconImage: CapraeLogo,
-        iconBg: "bg-white",
-        accent: "from-emerald-600 to-teal-800",
+        iconBg: "bg-black",
+        accent: "from-neutral-900 to-black",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
             problem: "The firm had a strong deal-sourcing engine but lacked a structured strategy product to help portfolio companies achieve post-acquisition value creation targets.",

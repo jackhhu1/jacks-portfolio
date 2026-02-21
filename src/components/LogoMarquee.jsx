@@ -11,8 +11,8 @@ import kearneyLogo from '../assets/logos/Kearney_Logo.svg.png';
 // ─── LogoMarquee — scrolling "worked with/for" strip ─────────────────────────
 
 const filterClasses = (dark) => dark
-    ? "contrast-[1.2] grayscale invert mix-blend-screen"
-    : "contrast-[1.2] grayscale mix-blend-multiply opacity-90";
+    ? "contrast-[1.2] invert mix-blend-screen"
+    : "contrast-[1.2] mix-blend-multiply opacity-90";
 
 const logos = [
     {
@@ -21,11 +21,11 @@ const logos = [
     },
     {
         name: "ElevenLabs",
-        render: ({ dark }) => <img src={elevenLabsLogo} alt="ElevenLabs" className={`h-7 scale-125 w-auto object-contain ${filterClasses(dark)}`} />
+        render: ({ dark }) => <img src={elevenLabsLogo} alt="ElevenLabs" className={`h-20 scale-125 w-auto object-contain ${filterClasses(dark)}`} />
     },
     {
         name: "Google",
-        render: ({ dark }) => <img src={googleLogo} alt="Google" className={`h-7 scale-110 w-auto object-contain ${filterClasses(dark)}`} />
+        render: ({ dark }) => <img src={googleLogo} alt="Google" className={`h-10 scale-110 w-auto object-contain ${filterClasses(dark)}`} />
     },
     {
         name: "University of Melbourne",
@@ -41,7 +41,7 @@ const logos = [
     },
     {
         name: "EY-Parthenon",
-        render: ({ dark }) => <img src={eyParthenonLogo} alt="EY-Parthenon" className={`h-6 w-auto object-contain ${filterClasses(dark)}`} />
+        render: ({ dark }) => <img src={eyParthenonLogo} alt="EY-Parthenon" className={`h-9 w-auto object-contain ${filterClasses(dark)}`} />
     },
     {
         name: "Kearney",
@@ -83,7 +83,7 @@ const LogoMarquee = () => {
                     {allLogos.map((logo, i) => (
                         <div
                             key={i}
-                            className="shrink-0 flex items-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-default select-none"
+                            className="shrink-0 flex items-center opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-default select-none"
                             title={logo.name}
                         >
                             {logo.render({ dark })}
