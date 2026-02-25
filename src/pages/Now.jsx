@@ -22,8 +22,7 @@ const Now = () => {
                     </h2>
                     <div className="prose dark:prose-invert text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
-                            I am currently creating a new venture studio model for vertical AI applications.
-                            The thesis is that small, highly-technical teams can outmaneuver incumbents by building deep workflow integrations that LLMs make possible for the first time.
+                            Currently taking complex problems and turning them into intuitive, high-impact software. I’m building in three areas I care deeply about: eliminating household food waste through smarter kitchen management, streamlining grassroots soccer for local clubs, and empowering small businesses with the technical infrastructure they need to scale.
                         </p>
                     </div>
                 </section>
