@@ -121,14 +121,14 @@ export const projects = [
         accent: "from-purple-600 to-pink-600",
         content: {
             problem: "Federated learning remains largely inaccessible to non-ML practitioners. The challenge was to build a practical, user-friendly application leveraging Flower's federated learning framework.",
-            context: "Competed in a 36-hour hackathon hosted by Stanford University and Flower Labs, against ~200 participants including engineers from Meta, Apple, Google, Amazon, and IBM.",
-            constraints: "36-hour time limit; team of 4 with mixed experience levels; had to build on the Flower federated learning framework; solution needed to be demo-ready and technically sound.",
+            context: "Competed in a 12-hour hackathon hosted by Stanford University and Flower Labs, against ~200 participants including engineers from Meta, Apple, Google, Amazon, and IBM.",
+            constraints: "12-hour time limit; solo hacker; had to build on the Flower federated learning framework; solution needed to be demo-ready and technically sound.",
             process: `
-1. **Problem Scoping**: Spent the first 3 hours researching real-world applications of federated learning, then narrowed to privacy-preserving healthcare data analysis.
-2. **Architecture Design**: Designed a system where hospitals could collaboratively train models without sharing patient data — using Flower for orchestration and a React dashboard for visualization.
-3. **Execution Sprint**: Split the team into frontend/backend pairs, maintained a shared Notion doc for API contracts, and ran 4-hour sprint cycles with demos.`,
-            outcome: "Won first place. Judges highlighted the clarity of the problem framing, the polish of the demo, and the practical applicability of the solution.",
-            lessons: "Hackathons reward clarity of thought more than lines of code. The teams that articulate 'why this matters' always outperform the ones that just build features."
+1. **Problem Scoping**: Spent the first 3 hours researching real-world applications of federated learning, then narrowed to privacy-preserving skin lesion classification.
+2. **Architecture Design**: Designed a system where clinics could collaboratively train models without sharing patient data - using Flower for orchestration and a React dashboard for visualization.
+3. **Execution Sprint**: Built a consumer facing mobile app to collect skin lesion images to assess potency of lesions.`,
+            outcome: "Named as a winner. Judges highlighted the clarity of the problem framing, the polish of the demo, and the practical applicability of the solution.",
+            lessons: "Clarity of thought matters more than lines of code. The teams that can demonstrate 'why this matters' always outperform the ones that just build features."
         }
     },
     {
@@ -260,4 +260,27 @@ export const projects = [
             lessons: "Planning is everything, but the plan is nothing — the ability to adapt in real-time while keeping 300 people safe and engaged is the real skill."
         }
     },
+    {
+        id: "doordash-case-comp",
+        title: "National Case Competition",
+        summary: "Runner up against 232 teams. Advised Doordash on new vertical expansion.",
+        tags: ["Strategy", "Operations", "Logistics"],
+        date: "2023",
+        featured: false,
+        icon: "🍔",
+        iconBg: "bg-red-500/15",
+        accent: "from-red-500 to-orange-600",
+        link: "https://drive.google.com/file/d/1GGEy0pLVbSXuQXEwExyLXOSRe2ZLIgUW/view?usp=sharing",
+        content: {
+            problem: "DoorDash sought innovative growth and operational strategies to enhance market share and profitability through new vertical expansion.",
+            context: "Competed in the FMAA x DoorDash Management National Case Competition, presenting strategic and operational recommendations in 3 rounds leading to the national final.",
+            constraints: "Strict time constraints to analyze a detailed business case, develop actionable solutions, and refine a pitch deck.",
+            process: `
+1. **Market Analysis**: Conducted a deep dive into the food delivery industry landscape and identified supply side constraints as core operational bottlenecks.
+2. **Strategy Formulation**: Developed a market entry strategy for upcycled food through a strategic acquisition of Yume Foods.
+3. **Pitch & Presentation**: Built a comprehensive presentation and defended the strategic recommendations to industry judges.`,
+            outcome: "Finished as runner ups against 232 teams.",
+            lessons: "Clear, structured storytelling is essential to communicate complex operational metrics to executive stakeholders effectively."
+        }
+    }
 ];

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projects, getTagColor } from '../data/projects';
 import Markdown from 'react-markdown';
-import { ArrowLeft, Calendar, AlertCircle, TrendingUp, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Calendar, AlertCircle, TrendingUp, Lightbulb, ExternalLink } from 'lucide-react';
 
 const TagPill = ({ tag }) => {
     const color = getTagColor(tag);
@@ -57,9 +57,19 @@ const ProjectDetail = () => {
                     </div>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">{project.title}</h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
+                <p className={`text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl ${project.link ? 'mb-8' : ''}`}>
                     {project.summary}
                 </p>
+                {project.link && (
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-full text-sm font-semibold hover:bg-neutral-800 dark:hover:bg-neutral-100 hover:scale-105 active:scale-95 transition-all shadow-sm"
+                    >
+                        View Work <ExternalLink size={16} />
+                    </a>
+                )}
             </header>
 
             <div className="grid gap-12 animate-fade-in" style={{ animationDelay: '0.1s' }}>
