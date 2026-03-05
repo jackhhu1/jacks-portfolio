@@ -84,6 +84,8 @@ const allItems = [
         tag: 'Recognition',
         title: 'AFR Top 100 Future Leaders',
         description: 'Selected by Gradconnection and the Australian Financial Review as one of 100 impactful young Australians for building resilient communities.',
+        link: 'https://au.gradconnection.com/top100/future-leaders/2024/',
+        linkLabel: 'See the profile',
         image: top100Img,
     },
 ];
