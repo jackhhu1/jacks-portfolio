@@ -9,8 +9,6 @@ import { lazy, Suspense } from 'react';
 const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
-const Writing = lazy(() => import('./pages/Writing'));
-const PostLayout = lazy(() => import('./pages/PostLayout'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Now = lazy(() => import('./pages/Now'));
@@ -35,8 +33,6 @@ function AppContent() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/writing" element={<Writing />} />
-            <Route path="/writing/:id" element={<PostLayout />} />
             <Route path="/now" element={<Now />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

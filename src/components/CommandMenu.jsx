@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import {
     Home,
     Briefcase,
-    PenTool,
     User,
     Mail,
     Search,
@@ -57,10 +56,6 @@ export const CommandMenu = () => {
                     <Command.Item onSelect={() => runCommand(() => navigate('/projects'))}>
                         <Briefcase className="w-4 h-4 mr-2" />
                         Projects
-                    </Command.Item>
-                    <Command.Item onSelect={() => runCommand(() => navigate('/writing'))}>
-                        <PenTool className="w-4 h-4 mr-2" />
-                        Writing
                     </Command.Item>
                     <Command.Item onSelect={() => runCommand(() => navigate('/now'))}>
                         <Layout className="w-4 h-4 mr-2" />
