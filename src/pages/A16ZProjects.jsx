@@ -21,10 +21,17 @@ const A16ZProjects = () => {
         "Engineering", "R&D", "Design"
     ];
 
+    const leadershipTags = [
+        "Leadership", "Community", "Non-Profit", "Social Impact"
+    ];
+
     const filteredProjects = projects.filter(p => {
         if (filter === 'All') return true;
         if (filter === 'Technical') {
             return p.tags.some(tag => technicalTags.includes(tag));
+        }
+        if (filter === 'Leadership') {
+            return p.tags.some(tag => leadershipTags.includes(tag));
         }
         return true;
     });
@@ -64,12 +71,12 @@ const A16ZProjects = () => {
                 </div>
 
                 {/* Filters */}
-                <div className="flex items-center gap-3 mb-8">
+                <div className="flex items-center gap-3 mb-8 flex-wrap">
                     <button
                         onClick={() => setFilter('All')}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${filter === 'All'
-                                ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
-                                : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
+                            ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
+                            : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
                             }`}
                     >
                         All Projects
@@ -77,11 +84,20 @@ const A16ZProjects = () => {
                     <button
                         onClick={() => setFilter('Technical')}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${filter === 'Technical'
-                                ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
-                                : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
+                            ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
+                            : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
                             }`}
                     >
                         Technical
+                    </button>
+                    <button
+                        onClick={() => setFilter('Leadership')}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${filter === 'Leadership'
+                            ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
+                            : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
+                            }`}
+                    >
+                        Leadership
                     </button>
                 </div>
 

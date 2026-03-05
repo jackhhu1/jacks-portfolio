@@ -179,25 +179,7 @@ export const projects = [
             lessons: "Growth isn't about doing more — it's about doing the right things consistently. One great content format repeated weekly beats ten one-off campaigns."
         }
     },
-    {
-        id: "AFR",
-        title: "AFR Top 100 Future Leaders",
-        summary: "Selected as one of 100 future leaders in Australia for building resilient communities",
-        tags: ["Leadership", "Recognition"],
-        date: "2024",
-        featured: false,
-        icon: "⭐",
-        iconBg: "bg-stone-500/15",
-        accent: "from-stone-600 to-neutral-800",
-        content: {
-            problem: "N/A",
-            context: "Selected by Gradconnection and Australian Financial Review to determine impactful young Australians",
-            constraints: "N/A",
-            process: "🚧 **Under construction.**",
-            outcome: "",
-            lessons: "Just hit apply"
-        }
-    },
+
     {
         id: "enactus-global-research",
         title: "International Conference Speaker",
@@ -258,8 +240,8 @@ export const projects = [
     {
         id: "cadets",
         title: "Senior Cadet Commander",
-        summary: "Led a state of 3250 youth, ran 4 statewide and national activities for 100-300+ attendees over 8 days (each).",
-        tags: ["Leadership", "Logistics", "Operations"],
+        summary: "Led a state of 3250 youth, ran 3 statewide and national activities for 100-300+ attendees over 8 days (each).",
+        tags: ["Leadership", "Community", "Operations"],
         date: "2022",
         featured: false,
         icon: "🛡️",
@@ -272,25 +254,6 @@ export const projects = [
             process: "🚧 **Under construction.**",
             outcome: "Successfully executed 4 statewide and national activities for 100-300+ attendees each. Achieved the highest cadet satisfaction scores in the unit's recent history. Zero critical safety incidents.",
             lessons: "Planning is everything, but the plan is nothing — the ability to adapt in real-time while keeping 300 people safe and engaged is the real skill."
-        }
-    },
-    {
-        id: "rotary-club",
-        title: "Co-President of Rotary Club",
-        summary: "Raised $10k for community projects.",
-        tags: ["Community", "Leadership", "Non-Profit"],
-        date: "2021",
-        featured: false,
-        icon: "🤝",
-        iconBg: "bg-yellow-500/15",
-        accent: "from-yellow-500 to-amber-600",
-        content: {
-            problem: "N/A",
-            context: "Served as Co-President of the Rotary Club.",
-            constraints: "N/A",
-            process: "🚧 **Under construction.**",
-            outcome: "Raised $10k for community projects.",
-            lessons: "🚧 **Under construction.**"
         }
     },
     {
@@ -313,10 +276,49 @@ export const projects = [
         }
     },
     {
+        id: "AFR",
+        title: "AFR Top 100 Future Leaders",
+        summary: "Selected as one of 100 future leaders in Australia for building resilient communities",
+        tags: ["Leadership", "Recognition"],
+        date: "2024",
+        featured: false,
+        icon: "⭐",
+        iconBg: "bg-stone-500/15",
+        accent: "from-stone-600 to-neutral-800",
+        content: {
+            problem: "N/A",
+            context: "Selected by Gradconnection and Australian Financial Review to determine impactful young Australians",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "",
+            lessons: "Just hit apply"
+        }
+    },
+    {
+        id: "rotary-club",
+        title: "Co-President of Rotary Club",
+        summary: "Raised $10k for community projects.",
+        tags: ["Community", "Leadership", "Non-Profit"],
+        date: "2021",
+        featured: false,
+        icon: "🤝",
+        iconBg: "bg-yellow-500/15",
+        accent: "from-yellow-500 to-amber-600",
+        content: {
+            problem: "N/A",
+            context: "Served as Co-President of the Rotary Club.",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "Raised $10k for community projects.",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+
+    {
         id: "soccer",
         title: "Semi-Professional Soccer Player",
         summary: "",
-        tags: ["Community", "Leadership", "Operations"],
+        tags: ["Sports", "Drive"],
         date: "2023",
         featured: false,
         icon: "⚽",
@@ -335,7 +337,7 @@ export const projects = [
         id: "taiwan-cycle",
         title: "Cycled 900km around Taiwan",
         summary: "Completed a 900km cycling route around Taiwan in 10 days with no prior training.",
-        tags: ["Sport", "Drive"],
+        tags: ["Sports", "Drive"],
         date: "2025",
         featured: false,
         icon: "🚴",
