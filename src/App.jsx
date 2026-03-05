@@ -13,6 +13,8 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Now = lazy(() => import('./pages/Now'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const A16Z = lazy(() => import('./pages/A16Z'));
+const A16ZProjects = lazy(() => import('./pages/A16ZProjects'));
 
 // Simple loading spinner
 const Loading = () => (
@@ -26,20 +28,31 @@ function AppContent() {
   return (
     <Router>
       <ScrollToTop />
-      <CommandMenu />
-      <Layout>
-        <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/now" element={<Now />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </Layout>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          {/* A16Z pages — standalone, no navbar/footer */}
+          <Route path="/a16z" element={<A16Z />} />
+          <Route path="/a16z/projects" element={<A16ZProjects />} />
+
+          {/* Main site with Layout */}
+          <Route path="*" element={
+            <>
+              <CommandMenu />
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects/:id" element={<ProjectDetail />} />
+                  <Route path="/now" element={<Now />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Layout>
+            </>
+          } />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
