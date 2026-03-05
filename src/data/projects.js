@@ -38,51 +38,9 @@ export const getTagColor = (tag) => tagColors[tag] || defaultTagColor;
 
 export const projects = [
     {
-        id: "enactus",
-        title: "Enactus",
-        summary: "Led an organizational transformation for 70 members, tripling revenue ($25k -> $75k), boosting NPS 51 -> 90, and placing World Top 16.",
-        tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
-        date: "2023 - 2024",
-        featured: true,
-        icon: null,
-        iconImage: EnactusLogo,
-        iconBg: "bg-yellow-400",
-        accent: "from-yellow-400 to-yellow-600",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        content: {
-            problem: "The university's Enactus chapter was struggling with low member engagement, fragmented project management, and stagnant revenue that limited the scale of social impact initiatives.",
-            context: "As President, I inherited an organisation of 50 members running 3 social enterprise projects. Member NPS was at 51 and with a 50%+ churn rate.",
-            constraints: "Volunteer-based workforce with high semester-to-semester turnover; zero operating budget at the start; competing priorities with members' academic workloads.",
-            process: "🚧 **Under construction.**",
-            outcome: "Tripled annual revenue from $25k to $75k. Lifted member NPS from 51 to 90. Achieved the highest member retention rate in the chapter's history. The team went on to place World Top 16 at the Enactus World Cup.",
-            lessons: "Leadership is about creating the conditions for others to succeed. Structuring volunteer teams like high-performance orgs doesn't kill culture — it amplifies it."
-        }
-    },
-    {
-        id: "caprae",
-        title: "Caprae Capital",
-        summary: "Scaled a new product line alongside CEO from 0->400k ARR. We helped close $50M worth of deals in the first year.",
-        tags: ["Strategy", "Private Equity", "Leadership"],
-        date: "2024 - 2025",
-        featured: true,
-        icon: null,
-        iconImage: CapraeLogo,
-        iconBg: "bg-black",
-        accent: "from-neutral-900 to-black",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        content: {
-            problem: "The firm had a strong deal-sourcing engine but lacked a structured strategy product to help portfolio companies achieve post-acquisition value creation targets.",
-            context: "Joined as an intern, however was promoted to strategy lead after being identified as a top performer in a cohort of 50+ students including students from Harvard, MIT, Yale etc. As strategy lead I worked directly with the CEO to grow and optimize a new product line.",
-            constraints: "Lean team of 3; needed to prove product-market fit while simultaneously closing deals; operating in a relationship-driven industry where trust takes time to build.",
-            process: "🚧 **Under construction.**",
-            outcome: "Scaled the new product line from $0 to $400k ARR within 12 months. Contributed to closing $50M in aggregate deal value across portfolio companies in year one.",
-            lessons: "In professional services, the product IS the team. Packaging expertise into repeatable frameworks is how you scale without diluting quality."
-        }
-    },
-    {
         id: "kindling-labs",
         title: "Kindling Labs",
-        summary: "Full product lifecycle development for software. Developed TMYS - more in pipeline",
+        summary: "Full product lifecycle development for software. Focus on consumer mobile applications",
         tags: ["Software Engineering", "Product", "R&D"],
         date: "2025-2026",
         featured: true,
@@ -90,13 +48,14 @@ export const projects = [
         iconImage: KindlingLogoPng,
         iconBg: "bg-neutral-800",
         accent: "from-blue-600 to-indigo-800",
+        link: "https://tellmeyourstory.app",
         image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         content: {
-            problem: "Too many ideas die in the planning phase. There's a gap between 'interesting concept' and 'shipped product' that solo builders struggle to cross consistently.",
-            context: "Founded Kindling Labs as a personal software studio — a framework for rapidly validating, building, and shipping software products from concept to live users.",
-            constraints: "Solo developer bandwidth; need to balance speed with code quality; each product targets a different market with different tech requirements.",
+            problem: "1: Intergenerational relationships, especially across borders and languages. 2: Household food waste. 3: Grassroots soccer analytics accessibility.",
+            context: "Founded Kindling Labs as a software studio - a framework for rapidly validating, building, and shipping software products from concept to live users.",
+            constraints: "Solo developer bandwidth; need to balance speed with code quality; each product targets a different market with different tech requirements. User insights take time to collect.",
             process: "🚧 **Under construction.**",
-            outcome: "Successfully shipped 1 product to live users within the first month. 2 additional products are currently in active development with early user communities.",
+            outcome: "Selected for a mentorship program run by a top VC in Australia. Shipped 1 product to live users within the first month. 2 additional products are currently in active development with early user communities.",
             lessons: "Perfection is the enemy of shipping. The fastest way to learn is to put something real in front of real people and iterate from there."
         }
     },
@@ -139,6 +98,125 @@ export const projects = [
         }
     },
     {
+        id: "caprae",
+        title: "Caprae Capital",
+        summary: "Scaled a new product line alongside CEO from 0->400k ARR. We helped close $50M worth of deals in the first year.",
+        tags: ["Strategy", "Private Equity", "Leadership"],
+        date: "2024 - 2025",
+        featured: true,
+        icon: null,
+        iconImage: CapraeLogo,
+        iconBg: "bg-black",
+        accent: "from-neutral-900 to-black",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        content: {
+            problem: "There was strong demand for the services, however the internal infrastructure lacked ability to scale while maintaining high quality outputs.",
+            context: "Joined as an intern, however was promoted to strategy lead after being identified as a top performer in a cohort of 50+ students including students from Harvard, MIT, Yale etc. As strategy lead I worked directly with the CEO to grow and optimize a new product line.",
+            constraints: "Operating in a relationship-driven industry where trust takes time to build.",
+            process: "🚧 **Under construction.**",
+            outcome: "Scaled the new product line from $0 to $400k ARR within 9 months. Contributed to closing $50M in aggregate deal value across clients in year one.",
+            lessons: "Under construction"
+        }
+    },
+    {
+        id: "enactus",
+        title: "Enactus",
+        summary: "Led an organizational transformation for 70 members, tripling revenue ($25k -> $75k), boosting NPS 51 -> 90, and placing World Top 16.",
+        tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
+        date: "2023 - 2024",
+        featured: true,
+        icon: null,
+        iconImage: EnactusLogo,
+        iconBg: "bg-yellow-400",
+        accent: "from-yellow-400 to-yellow-600",
+        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        content: {
+            problem: "The university's Enactus chapter was struggling with low member engagement, fragmented project management, and stagnant revenue that limited the scale of social impact initiatives.",
+            context: "As President, I inherited an organisation of 50 members running 3 social enterprise projects. Member NPS was at 51 and with a 50%+ churn rate.",
+            constraints: "Volunteer-based workforce with high semester-to-semester turnover; zero operating budget at the start; competing priorities with members' academic workloads.",
+            process: "🚧 **Under construction.**",
+            outcome: "Tripled annual revenue from $25k to $75k. Lifted member NPS from 51 to 90. Achieved the highest member retention rate in the chapter's history. The team went on to place World Top 16 at the Enactus World Cup.",
+            lessons: "Leadership is about creating the conditions for others to succeed. Structuring volunteer teams like high-performance orgs doesn't kill culture — it amplifies it."
+        }
+    },
+    {
+        id: "doordash-case-comp",
+        title: "National Case Competition",
+        summary: "Runner up against 232 teams. Advised Doordash on new vertical expansion.",
+        tags: ["Strategy", "Operations", "Logistics"],
+        date: "2023",
+        featured: false,
+        icon: "🍔",
+        iconBg: "bg-red-500/15",
+        accent: "from-red-500 to-orange-600",
+        link: "https://drive.google.com/file/d/1GGEy0pLVbSXuQXEwExyLXOSRe2ZLIgUW/view?usp=sharing",
+        content: {
+            problem: "DoorDash sought innovative growth and operational strategies to enhance market share and profitability through new vertical expansion.",
+            context: "Competed in the FMAA x DoorDash Management National Case Competition, presenting strategic and operational recommendations in 3 rounds leading to the national final.",
+            constraints: "Strict time constraints to analyze a detailed business case, develop actionable solutions, and refine a pitch deck.",
+            process: "🚧 **Under construction.**",
+            outcome: "Finished as runner ups against 232 teams.",
+            lessons: "Clear, structured storytelling is essential to communicate complex operational metrics to executive stakeholders effectively."
+        }
+    },
+    {
+        id: "AFR",
+        title: "AFR Top 100 Future Leaders",
+        summary: "Selected as one of 100 future leaders in Australia for building resilient communities",
+        tags: ["Leadership", "Recognition"],
+        date: "2024",
+        featured: false,
+        icon: "⭐",
+        iconBg: "bg-stone-500/15",
+        accent: "from-stone-600 to-neutral-800",
+        content: {
+            problem: "N/A",
+            context: "Selected by Gradconnection and Australian Financial Review to determine impactful young Australians",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "",
+            lessons: "Just hit apply"
+        }
+    },
+    {
+        id: "enactus-global-research",
+        title: "International Conference Speaker",
+        summary: "Presented an abstract. 1 of 5 students selected globally.",
+        tags: ["Recognition"],
+        date: "2024",
+        featured: false,
+        icon: "🌍",
+        iconBg: "bg-emerald-500/15",
+        accent: "from-emerald-500 to-teal-600",
+        content: {
+            problem: "N/A",
+            context: "Enactus Global Research Network",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "Selected as one of 5 students globally to present an abstract at the international conference.",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+    {
+        id: "dav-debating",
+        title: "DAV A-Grade Debating",
+        summary: "State Semi-Finalist for the largest english debating competion in the world (Undefeated 9 rounds).",
+        tags: ["Recognition", "Community"],
+        date: "2021",
+        featured: false,
+        icon: "🎙️",
+        iconBg: "bg-blue-500/15",
+        accent: "from-blue-500 to-indigo-600",
+        content: {
+            problem: "N/A",
+            context: "Competed in the DAV A-Grade Debating competition, the largest english debating competition in the world.",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "Reached the State Semi-Finals going undefeated for 9 rounds, before losing to the eventual winners in a split decision.",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+    {
         id: "growth-unyouth",
         title: "UN Youth Growth",
         summary: "Grew social media engagement 198%, engaged 1201+ students in events.",
@@ -177,22 +255,22 @@ export const projects = [
         }
     },
     {
-        id: "AFR",
-        title: "AFR Top 100 Future Leaders",
-        summary: "Selected as one of 100 future leaders in Australia for building resilient communities",
-        tags: ["Leadership", "Recognition"],
-        date: "2024",
+        id: "rotary-club",
+        title: "Co-President of Rotary Club",
+        summary: "Raised $10k for community projects.",
+        tags: ["Community", "Leadership", "Non-Profit"],
+        date: "2021",
         featured: false,
-        icon: "⭐",
-        iconBg: "bg-stone-500/15",
-        accent: "from-stone-600 to-neutral-800",
+        icon: "🤝",
+        iconBg: "bg-yellow-500/15",
+        accent: "from-yellow-500 to-amber-600",
         content: {
             problem: "N/A",
-            context: "Selected by Gradconnection and Australian Financial Review to determine impactful young Australians",
+            context: "Served as Co-President of the Rotary Club.",
             constraints: "N/A",
             process: "🚧 **Under construction.**",
-            outcome: "",
-            lessons: "Just hit apply"
+            outcome: "Raised $10k for community projects.",
+            lessons: "🚧 **Under construction.**"
         }
     },
     {
@@ -231,26 +309,6 @@ export const projects = [
             process: "🚧 **Under construction.**",
             outcome: "Successfully executed 4 statewide and national activities for 100-300+ attendees each. Achieved the highest cadet satisfaction scores in the unit's recent history. Zero critical safety incidents.",
             lessons: "Planning is everything, but the plan is nothing — the ability to adapt in real-time while keeping 300 people safe and engaged is the real skill."
-        }
-    },
-    {
-        id: "doordash-case-comp",
-        title: "National Case Competition",
-        summary: "Runner up against 232 teams. Advised Doordash on new vertical expansion.",
-        tags: ["Strategy", "Operations", "Logistics"],
-        date: "2023",
-        featured: false,
-        icon: "🍔",
-        iconBg: "bg-red-500/15",
-        accent: "from-red-500 to-orange-600",
-        link: "https://drive.google.com/file/d/1GGEy0pLVbSXuQXEwExyLXOSRe2ZLIgUW/view?usp=sharing",
-        content: {
-            problem: "DoorDash sought innovative growth and operational strategies to enhance market share and profitability through new vertical expansion.",
-            context: "Competed in the FMAA x DoorDash Management National Case Competition, presenting strategic and operational recommendations in 3 rounds leading to the national final.",
-            constraints: "Strict time constraints to analyze a detailed business case, develop actionable solutions, and refine a pitch deck.",
-            process: "🚧 **Under construction.**",
-            outcome: "Finished as runner ups against 232 teams.",
-            lessons: "Clear, structured storytelling is essential to communicate complex operational metrics to executive stakeholders effectively."
         }
     }
 ];

@@ -30,8 +30,8 @@ const ProjectShowcase = () => {
         'kindling-labs': {
             category: 'Software Studio',
             metrics: [
+                { label: 'Mentorship', value: 'Top ANZ VC', icon: TrendingUp },
                 { label: 'Shipped', value: '1 Product', icon: Code },
-                { label: 'In Dev', value: '2 More', icon: Code },
             ],
             color: 'from-blue-600 to-indigo-800',
             image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
