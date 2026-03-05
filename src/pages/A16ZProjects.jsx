@@ -2,10 +2,47 @@ import { ArrowLeft, ExternalLink, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects, getTagColor } from '../data/projects';
 
+// Curated dark-theme cyber/aesthetic palette fitting the A16Z aesthetic
+const TAG_COLORS = {
+    // A16Z Orange/Red
+    "Growth": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
+    "Recognition": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
+    "Sport": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
+    "Social Media": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
+
+    // Electric Blue (Engineering/Tech)
+    "Software Engineering": "text-blue-400 bg-blue-500/[0.05] border-blue-400/20",
+    "Engineering": "text-blue-400 bg-blue-500/[0.05] border-blue-400/20",
+
+    // Glowing Indigo/Purple (Product/AI)
+    "Product": "text-indigo-400 bg-indigo-500/[0.05] border-indigo-400/20",
+    "AI": "text-indigo-400 bg-indigo-500/[0.05] border-indigo-400/20",
+    "R&D": "text-indigo-400 bg-indigo-500/[0.05] border-indigo-400/20",
+    "Design": "text-purple-400 bg-purple-500/[0.05] border-purple-400/20",
+
+    // Emerald/Teal (Social/Community)
+    "Community": "text-emerald-400 bg-emerald-500/[0.05] border-emerald-400/20",
+    "Social Entrepreneurship": "text-emerald-400 bg-emerald-500/[0.05] border-emerald-400/20",
+    "Non-Profit": "text-teal-400 bg-teal-500/[0.05] border-teal-400/20",
+
+    // Warm Amber/Gold (Strategy/Leadership)
+    "Strategy": "text-amber-400/90 bg-amber-500/[0.05] border-amber-400/20",
+    "Leadership": "text-amber-400/90 bg-amber-500/[0.05] border-amber-400/20",
+    "Private Equity": "text-amber-400/90 bg-amber-500/[0.05] border-amber-400/20",
+
+    // Cool Zinc (Ops/Logistics)
+    "Operations": "text-zinc-400 bg-zinc-500/[0.05] border-zinc-500/20",
+    "Logistics": "text-zinc-400 bg-zinc-500/[0.05] border-zinc-500/20",
+};
+
+const getA16ZColor = (tag) => {
+    return TAG_COLORS[tag] || "text-zinc-400 bg-zinc-500/[0.05] border-zinc-500/20";
+};
+
 const TagPill = ({ tag }) => {
-    const color = getTagColor(tag);
+    const colorClasses = getA16ZColor(tag);
     return (
-        <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border bg-white/5 text-white/50 border-white/10`}>
+        <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${colorClasses}`}>
             {tag}
         </span>
     );
@@ -13,18 +50,18 @@ const TagPill = ({ tag }) => {
 
 const A16ZProjects = () => {
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-white/20">
-            {/* Subtle ambient glow */}
+        <div className="min-h-screen bg-[#070707] text-white selection:bg-[#FF4F00]/30">
+            {/* Subtle ambient glow — warm tint to match A16Z main page */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-1/4 w-[60vw] h-[40vh] bg-gradient-to-br from-blue-900/8 via-purple-900/5 to-transparent rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 right-0 w-[40vw] h-[30vh] bg-gradient-to-tl from-indigo-900/8 to-transparent rounded-full blur-[100px]" />
+                <div className="absolute top-0 right-1/4 w-[50vw] h-[35vh] bg-gradient-to-br from-[#FF4F00]/[0.03] via-transparent to-transparent rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 left-0 w-[40vw] h-[25vh] bg-gradient-to-tr from-[#FF4F00]/[0.02] to-transparent rounded-full blur-[100px]" />
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-20">
                 {/* Back Link */}
                 <Link
                     to="/a16z"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-white transition-colors mb-12 group"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-[#FF4F00] transition-colors mb-12 group"
                 >
                     <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
                     Back
@@ -33,73 +70,77 @@ const A16ZProjects = () => {
                 {/* Header */}
                 <div className="mb-16">
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/40">
-                            Jack Hu — Full Project Archive
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FF4F00] animate-pulse" />
+                        <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30">
+                            Jack Hu | Full Project Archive
                         </span>
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
                         All Projects
                     </h1>
                     <p className="text-lg text-white/40 max-w-xl">
-                        A comprehensive view of strategic initiatives, product launches, and technical implementations.
+                        A bit of everything I've worked on.
                     </p>
                 </div>
 
                 {/* Projects Grid */}
-                <div className="space-y-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="group flex items-start gap-6 px-6 py-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/[0.12] transition-all duration-300"
+                            className="group flex flex-col gap-4 px-6 py-5 rounded-xl border border-white/[0.06] bg-[#070707] hover:bg-white/[0.02] hover:border-[#FF4F00]/30 transition-all duration-300 h-full"
                         >
-                            {/* Icon */}
-                            <div className="flex-shrink-0 mt-0.5">
-                                {project.iconImage ? (
-                                    <div className={`w-10 h-10 rounded-xl ${project.iconBg || 'bg-neutral-800'} flex items-center justify-center overflow-hidden`}>
-                                        <img src={project.iconImage} alt={project.title} className="w-full h-full object-cover rounded-xl" />
-                                    </div>
-                                ) : (
-                                    <div className={`w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-lg`}>
-                                        {project.icon}
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Content */}
-                            <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-3 mb-1">
-                                    <h3 className="text-base font-semibold text-white group-hover:text-white/90 transition-colors truncate">
-                                        {project.title}
-                                    </h3>
-                                    {project.link && (
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex-shrink-0 text-white/20 hover:text-white/60 transition-colors"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            <ExternalLink size={14} />
-                                        </a>
+                            {/* Header row: Icon & Title */}
+                            <div className="flex items-start gap-4">
+                                <div className="flex-shrink-0 mt-0.5">
+                                    {project.iconImage ? (
+                                        <div className={`w-10 h-10 rounded-xl ${project.iconBg || 'bg-neutral-800'} flex items-center justify-center overflow-hidden`}>
+                                            <img src={project.iconImage} alt={project.title} className="w-full h-full object-cover rounded-xl" />
+                                        </div>
+                                    ) : (
+                                        <div className={`w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-lg`}>
+                                            {project.icon}
+                                        </div>
                                     )}
                                 </div>
-                                {project.summary && (
-                                    <p className="text-sm text-white/40 leading-relaxed mb-2 line-clamp-2">
-                                        {project.summary}
-                                    </p>
-                                )}
-                                <div className="flex items-center gap-2 flex-wrap">
-                                    {project.tags.slice(0, 3).map((tag) => (
-                                        <TagPill key={tag} tag={tag} />
-                                    ))}
-                                </div>
-                            </div>
 
-                            {/* Date */}
-                            <div className="hidden sm:flex items-center gap-1.5 text-xs text-white/25 font-medium flex-shrink-0 mt-1">
-                                <Calendar size={12} />
-                                {project.date}
+                                {/* Content body */}
+                                <div className="flex-1 min-w-0 flex flex-col h-full">
+                                    <div className="flex items-start justify-between gap-3 mb-2">
+                                        <h3 className="text-base font-semibold text-white group-hover:text-[#FF4F00] transition-colors line-clamp-2 leading-tight">
+                                            {project.title}
+                                        </h3>
+                                        {project.link && (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-shrink-0 text-white/20 hover:text-[#FF4F00] transition-colors mt-0.5"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <ExternalLink size={14} />
+                                            </a>
+                                        )}
+                                    </div>
+                                    {project.summary && (
+                                        <p className="text-sm text-white/40 leading-relaxed mb-2 line-clamp-2">
+                                            {project.summary}
+                                        </p>
+                                    )}
+
+                                    {/* Bottom Row: Tags & Date */}
+                                    <div className="flex items-center justify-between gap-4 mt-auto pt-4">
+                                        <div className="flex items-center gap-2 flex-wrap">
+                                            {project.tags.slice(0, 2).map((tag) => (
+                                                <TagPill key={tag} tag={tag} />
+                                            ))}
+                                        </div>
+                                        <div className="flex items-center gap-1.5 text-xs text-white/25 font-medium flex-shrink-0">
+                                            <Calendar size={12} />
+                                            {project.date}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -109,7 +150,7 @@ const A16ZProjects = () => {
                 <div className="mt-16 pt-8 border-t border-white/[0.06] flex items-center justify-between">
                     <Link
                         to="/a16z"
-                        className="text-sm text-white/30 hover:text-white transition-colors"
+                        className="text-sm text-white/30 hover:text-[#FF4F00] transition-colors"
                     >
                         ← Back to overview
                     </Link>

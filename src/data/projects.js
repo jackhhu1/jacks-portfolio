@@ -122,7 +122,7 @@ export const projects = [
         id: "enactus",
         title: "Enactus",
         summary: "Led an organizational transformation for 70 members, tripling revenue ($25k -> $75k), boosting NPS 51 -> 90, and placing World Top 16.",
-        tags: ["Social Entrepreneurship", "Leadership", "Non-Profit"],
+        tags: ["Social Impact", "Leadership", "Non-Profit"],
         date: "2023 - 2024",
         featured: true,
         icon: null,
@@ -237,7 +237,7 @@ export const projects = [
     },
     {
         id: "cadets",
-        title: "Army Cadets Event Execution",
+        title: "Senior Cadet Commander",
         summary: "Led a state of 3250 youth, ran 4 statewide and national activities for 100-300+ attendees over 8 days (each).",
         tags: ["Community", "Logistics", "Operations"],
         date: "2022",
@@ -309,6 +309,63 @@ export const projects = [
             process: "🚧 **Under construction.**",
             outcome: "Successfully executed 4 statewide and national activities for 100-300+ attendees each. Achieved the highest cadet satisfaction scores in the unit's recent history. Zero critical safety incidents.",
             lessons: "Planning is everything, but the plan is nothing — the ability to adapt in real-time while keeping 300 people safe and engaged is the real skill."
+        }
+    },
+    {
+        id: "taiwan-cycle",
+        title: "Cycled 900km around Taiwan",
+        summary: "Completed a 900km cycling route around Taiwan in 10 days with no prior training.",
+        tags: ["Sport", "Community"],
+        date: "2025",
+        featured: false,
+        icon: "🚴",
+        iconBg: "bg-emerald-500/15",
+        accent: "from-emerald-600 to-green-800",
+        content: {
+            problem: "N/A",
+            context: "Decided to cycle around the circumference of Taiwan (900km) in 10 days without any prior cycling training.",
+            constraints: "No prior training, tight 10 day schedule, physical exhaustion.",
+            process: "🚧 **Under construction.**",
+            outcome: "Successfully completed the 900km circuit in 10 days.",
+            lessons: "Resilience and sheer willpower can compensate for a lack of preparation, though it's much more painful."
+        }
+    },
+    {
+        id: "national-hackathon",
+        title: "National Student Hackathon",
+        summary: "Ran a national hackathon with universities across Australia, securing $20k in sponsorship.",
+        tags: ["Operations", "Community", "Leadership"],
+        date: "2023",
+        featured: false,
+        icon: "💻",
+        iconBg: "bg-blue-500/15",
+        accent: "from-blue-600 to-indigo-800",
+        content: {
+            problem: "N/A",
+            context: "Organized and ran a national-level hackathon involving multiple universities across Australia.",
+            constraints: "Coordinating across different states and universities; securing funding and sponsorships.",
+            process: "🚧 **Under construction.**",
+            outcome: "Secured $20k in sponsorship funding and successfully ran the event with high student participation across the country.",
+            lessons: "Cross-university collaboration requires clear communication and strong incentive alignment for sponsors."
+        }
+    },
+    {
+        id: "enactus-innovative",
+        title: "Most Innovative Student Award",
+        summary: "Awarded Most Innovative Student by Enactus Australia.",
+        tags: ["Recognition", "Social Impact"],
+        date: "2024",
+        featured: false,
+        icon: "💡",
+        iconBg: "bg-yellow-500/15",
+        accent: "from-yellow-400 to-orange-500",
+        content: {
+            problem: "N/A",
+            context: "Recognized for innovative contributions to social enterprise projects during my time at Enactus.",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "Received the Most Innovative Student Award from Enactus Australia.",
+            lessons: "Innovation in the non-profit sector is about applying business frameworks to solve social problems in sustainable ways."
         }
     }
 ];

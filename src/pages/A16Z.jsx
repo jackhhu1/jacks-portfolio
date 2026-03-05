@@ -1,5 +1,21 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, Globe } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Globe, Gamepad2 } from 'lucide-react';
+import KindlingLogoPng from '../assets/KindlingLogo.png';
+
+// ─── Logo imports for marquee ────────────────────────────────────
+import anthropicLogo from '../assets/logos/Anthropic_logo.svg';
+import elevenLabsLogo from '../assets/logos/elevenlabs.svg';
+import googleLogo from '../assets/logos/image8-2.webp';
+import unimelbLogo from '../assets/logos/unimelb-logo.jpg';
+import deloitteLogo from '../assets/logos/Logo_of_Deloitte.svg.png';
+import unYouthLogo from '../assets/logos/UN-Youth.png';
+import eyParthenonLogo from '../assets/logos/EY_Parthenon_logo.svg.png';
+import kearneyLogo from '../assets/logos/Kearney_Logo.svg.png';
+
+// ─── Uploaded showcase images ────────────────────────────────────
+import stanfordHackathonImg from '../assets/stanford-flower.jpg';
+import top100Img from '../assets/top100.jpg';
+import enactusImg from '../assets/enactus-worldcup.jpg';
 
 // ─── All showcase items: intro (0-2) then "what else" (3+) ──────
 const allItems = [
@@ -8,16 +24,18 @@ const allItems = [
         text: 'A competitive builder.',
         tag: 'Sport',
         title: 'Semi-Professional Soccer Player',
-        description: 'Competed at semi-professional level across multiple seasons. Built discipline, resilience, and a competitive edge that carries into everything else.',
+        description: 'Competed at semi-professional level as a goalkeeper despite being short. Built discipline, resilience, and a competitive edge that carries into everything else.',
+        link: 'https://fminside.net/players/7-fm-26/2000256392-jack-hu',
+        linkLabel: 'Find me on Football Manager',
         image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
         text: 'Built products from scratch.',
         tag: 'Software Studio',
         title: 'Kindling Labs',
-        description: 'Founded a software studio focused on consumer mobile apps. Shipped Tell Me Your Story to live users within a month. Selected for a mentorship program run by a top ANZ VC. 2 additional products in active development.',
+        description: 'Founded a software studio focused on consumer mobile apps. Shipped Tell Me Your Story to live users within a month. Selected for a mentorship program run by the top ANZ VC. 2 additional products in active development.',
         link: 'https://tellmeyourstory.app',
-        linkLabel: 'Try Tell Me Your Story →',
+        linkLabel: 'Try Tell Me Your Story',
         image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
@@ -25,28 +43,30 @@ const allItems = [
         tag: 'Leadership',
         title: 'Enactus President',
         description: 'Inherited an organisation with 50%+ churn. Tripled revenue ($25k → $75k), lifted NPS from 51 → 90, and achieved highest retention in chapter history. Placed World Top 16 at the Enactus World Cup.',
-        image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        image: enactusImg,
     },
     // ── "What else" phrases ─────────────────────────────────────
     {
         text: 'Win a Stanford AI hackathon.',
         tag: 'AI / Product',
         title: 'Stanford x Flower Hackathon',
-        description: 'Named winner at a 12-hour hackathon hosted by Stanford University and Flower Labs. Competed solo against ~200 participants including engineers from Meta, Apple, Google, Amazon, and IBM.',
-        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        description: 'Named winner at a 12-hour hackathon hosted by Stanford University and Flower Labs. Competed solo against ~200 participants including engineers from Meta, Apple, Google, students from Stanford, Berkeley, CMU, as well as 500 Global Founders.',
+        link: 'https://flower.ai/blog/2025-10-22-decentralized-hackathon-sf-winners/',
+        linkLabel: 'Read about it',
+        image: stanfordHackathonImg,
     },
     {
         text: 'Curate data for frontier AI labs.',
         tag: 'AI / Engineering',
         title: 'AI Data Specialist',
-        description: 'Oversaw data quality for training and evaluating frontier models at labs including Anthropic, Google, and Eleven Labs. Maintained 98%+ quality score across all engagements.',
+        description: 'Oversaw data quality for training and evaluating frontier models at labs including Anthropic, Google, and Eleven Labs. Identified as a top performer across engagements.',
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
         text: 'Scale a PE advisory product 0 → $400k ARR.',
         tag: 'Strategy',
         title: 'Caprae Capital',
-        description: 'Promoted to strategy lead (top performer in a cohort of 50+ from Harvard, MIT, Yale etc.). Grew a new product line from $0 to $400k ARR in 9 months, contributing to $50M in deal value.',
+        description: 'Promoted to strategy lead (top performer in a cohort of 50+ from Harvard, MIT, Yale etc.). Worked alongside CEO to grow a new product line from $0 to $400k ARR in 9 months, contributing to $50M in deal value.',
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
@@ -54,18 +74,33 @@ const allItems = [
         tag: 'Research',
         title: 'International Conference Speaker',
         description: 'Selected as 1 of 5 students globally to present an abstract at the Enactus Global Research Network international conference.',
+        link: 'https://www.enactusaustralia.org.au/wp-content/uploads/2025/09/EGRN2024compendium.pdf',
+        linkLabel: 'Find the abstract',
         image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
-        text: 'Win AFR Top 100 Future Leaders.',
+        text: 'Selected as one of the top 100 future leaders nationally.',
         tag: 'Recognition',
         title: 'AFR Top 100 Future Leaders',
         description: 'Selected by Gradconnection and the Australian Financial Review as one of 100 impactful young Australians for building resilient communities.',
-        image: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        image: top100Img,
     },
 ];
 
-const INTRO_COUNT = 3; // first 3 items are intro phrases
+const INTRO_COUNT = 3;
+
+// ─── Marquee logos ───────────────────────────────────────────────
+const logos = [
+    { name: "Anthropic", src: anthropicLogo, h: "h-5" },
+    { name: "ElevenLabs", src: elevenLabsLogo, h: "h-16 scale-110" },
+    { name: "Google", src: googleLogo, h: "h-9 scale-110" },
+    { name: "University of Melbourne", src: unimelbLogo, h: "h-10" },
+    { name: "Deloitte", src: deloitteLogo, h: "h-5" },
+    { name: "UN Youth Australia", src: unYouthLogo, h: "h-8" },
+    { name: "EY-Parthenon", src: eyParthenonLogo, h: "h-8" },
+    { name: "Kearney", src: kearneyLogo, h: "h-5" },
+];
+const marqueeLogos = [...logos, ...logos, ...logos];
 
 // ─── Showcase Card (Right Panel) ─────────────────────────────────
 const ShowcaseCard = ({ item, isVisible }) => {
@@ -104,12 +139,26 @@ const ShowcaseCard = ({ item, isVisible }) => {
     );
 };
 
+// ─── Hoverable phrase helper ─────────────────────────────────────
+const HoverPhrase = ({ text, index, activeIndex, hasInteracted, onHover }) => (
+    <span
+        onMouseEnter={() => onHover(index)}
+        className={`inline cursor-default transition-colors duration-300 ${activeIndex === index
+            ? 'text-white'
+            : hasInteracted
+                ? 'text-white/20 hover:text-white/50'
+                : 'text-white/25 hover:text-white/50'
+            }`}
+    >
+        {text}{' '}
+    </span>
+);
+
 // ─── Main Page ───────────────────────────────────────────────────
 const A16Z = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [hasInteracted, setHasInteracted] = useState(false);
 
-    // Auto-cycle through all items
     useEffect(() => {
         if (hasInteracted) return;
         const interval = setInterval(() => {
@@ -123,21 +172,20 @@ const A16Z = () => {
         setActiveIndex(index);
     };
 
-    const introItems = allItems.slice(0, INTRO_COUNT);
     const elseItems = allItems.slice(INTRO_COUNT);
 
     return (
-        <div className="a16z-page min-h-screen bg-[#070707] text-white selection:bg-[#FF4F00]/30">
-            {/* Subtle ambient glow — warm tint */}
+        <div className="a16z-page min-h-screen bg-[#070707] text-white selection:bg-[#FF4F00]/30 flex flex-col">
+            {/* Subtle ambient glow */}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <div className="absolute top-0 right-1/4 w-[50vw] h-[35vh] bg-gradient-to-br from-[#FF4F00]/[0.03] via-transparent to-transparent rounded-full blur-[120px]" />
                 <div className="absolute bottom-0 left-0 w-[40vw] h-[25vh] bg-gradient-to-tr from-[#FF4F00]/[0.02] to-transparent rounded-full blur-[100px]" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-16 min-h-screen flex flex-col">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-16 flex-1 flex flex-col">
 
                 {/* ── Header ── */}
-                <header className="mb-10 md:mb-12">
+                <header className="mb-10 md:mb-12 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#FF4F00] animate-pulse" />
                         <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/30">
@@ -158,31 +206,11 @@ const A16Z = () => {
                                 <span className="text-[#FF4F00]">Jack Hu</span>
                             </h1>
                             <p className="text-xl md:text-[1.35rem] lg:text-[1.5rem] font-medium leading-[1.35] tracking-tight">
-                                {/* "A competitive builder." — hoverable */}
-                                <span
-                                    onMouseEnter={() => handleHover(0)}
-                                    className={`inline cursor-default transition-colors duration-300 ${activeIndex === 0 ? 'text-white' : hasInteracted ? 'text-white/20 hover:text-white/50' : 'text-white/25 hover:text-white/50'}`}
-                                >
-                                    {introItems[0].text}
-                                </span>{' '}
-                                {/* "Trained at Unimelb and UIUC." — static context */}
-                                <span className="text-white/20">
-                                    Trained at Unimelb and UIUC.
-                                </span>{' '}
-                                {/* "Built products from scratch." — hoverable */}
-                                <span
-                                    onMouseEnter={() => handleHover(1)}
-                                    className={`inline cursor-default transition-colors duration-300 ${activeIndex === 1 ? 'text-white' : hasInteracted ? 'text-white/20 hover:text-white/50' : 'text-white/25 hover:text-white/50'}`}
-                                >
-                                    {introItems[1].text}
-                                </span>{' '}
-                                {/* "Scaled organisations." — hoverable */}
-                                <span
-                                    onMouseEnter={() => handleHover(2)}
-                                    className={`inline cursor-default transition-colors duration-300 ${activeIndex === 2 ? 'text-white' : hasInteracted ? 'text-white/20 hover:text-white/50' : 'text-white/25 hover:text-white/50'}`}
-                                >
-                                    {introItems[2].text}
-                                </span>
+                                <HoverPhrase text="As a competitive" index={0} activeIndex={activeIndex} hasInteracted={hasInteracted} onHover={handleHover} />
+                                <span className="text-white/20"> builder trained at Unimelb and UIUC, I've </span>
+                                <HoverPhrase text="built products from scratch" index={1} activeIndex={activeIndex} hasInteracted={hasInteracted} onHover={handleHover} />
+                                <span className="text-white/20">and </span>
+                                <HoverPhrase text="scaled communities to worldwide recognition." index={2} activeIndex={activeIndex} hasInteracted={hasInteracted} onHover={handleHover} />
                             </p>
                         </div>
 
@@ -195,18 +223,14 @@ const A16Z = () => {
                                 {elseItems.map((item, i) => {
                                     const globalIndex = INTRO_COUNT + i;
                                     return (
-                                        <span
+                                        <HoverPhrase
                                             key={globalIndex}
-                                            onMouseEnter={() => handleHover(globalIndex)}
-                                            className={`inline cursor-default transition-colors duration-300 ${activeIndex === globalIndex
-                                                ? 'text-white'
-                                                : hasInteracted
-                                                    ? 'text-white/20 hover:text-white/50'
-                                                    : 'text-white/25 hover:text-white/50'
-                                                }`}
-                                        >
-                                            {item.text}{' '}
-                                        </span>
+                                            text={item.text}
+                                            index={globalIndex}
+                                            activeIndex={activeIndex}
+                                            hasInteracted={hasInteracted}
+                                            onHover={handleHover}
+                                        />
                                     );
                                 })}
                                 <a
@@ -218,9 +242,9 @@ const A16Z = () => {
                             </p>
                         </div>
 
-                        {/* Bottom: Socials */}
+                        {/* Bottom: Socials + Kindling Labs logo */}
                         <div className="flex items-center gap-5 mt-auto pt-6 border-t border-white/[0.06]">
-                            <a href="mailto:jack@kindlinglabs.com" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="Email">
+                            <a href="mailto:jackhhu1@gmail.com" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="Email">
                                 <Mail size={16} />
                             </a>
                             <a href="https://github.com/jackhhu" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="GitHub">
@@ -232,10 +256,16 @@ const A16Z = () => {
                             <a href="/" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="Portfolio">
                                 <Globe size={16} />
                             </a>
-                            <div className="ml-auto flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                <span className="text-[10px] font-medium text-white/20 tracking-wide">Current: Kindling Labs</span>
-                            </div>
+                            {/* Kindling Labs logo */}
+                            <a
+                                href="https://tellmeyourstory.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ml-auto flex items-center gap-2 opacity-40 hover:opacity-80 transition-opacity"
+                            >
+                                <img src={KindlingLogoPng} alt="Kindling Labs" className="h-5 w-5 rounded" />
+                                <span className="text-[10px] font-medium text-white/40 tracking-wide">Kindling Labs</span>
+                            </a>
                         </div>
                     </div>
 
@@ -263,6 +293,39 @@ const A16Z = () => {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* ── Scrolling logo marquee — "Worked with & for" ── */}
+            <div className="relative z-10 py-10 overflow-hidden border-t border-white/[0.06]">
+                <p className="text-center text-[10px] uppercase tracking-[0.25em] text-white/20 mb-6 font-medium">
+                    Worked with &amp; for
+                </p>
+
+                {/* Fade edges */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-[#070707] to-transparent" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-[#070707] to-transparent" />
+
+                {/* Scrolling track */}
+                <div className="flex overflow-hidden">
+                    <div
+                        className="flex gap-16 items-center animate-marquee will-change-transform"
+                        style={{ animationDuration: '50s' }}
+                    >
+                        {marqueeLogos.map((logo, i) => (
+                            <div
+                                key={i}
+                                className="shrink-0 flex items-center opacity-40 hover:opacity-80 transition-opacity duration-300 cursor-default select-none"
+                                title={logo.name}
+                            >
+                                <img
+                                    src={logo.src}
+                                    alt={logo.name}
+                                    className={`${logo.h} w-auto object-contain contrast-[1.2] invert mix-blend-screen`}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
