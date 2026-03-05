@@ -2,41 +2,9 @@ import { ArrowLeft, ExternalLink, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects, getTagColor } from '../data/projects';
 
-// Curated dark-theme cyber/aesthetic palette fitting the A16Z aesthetic
-const TAG_COLORS = {
-    // A16Z Orange/Red
-    "Growth": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
-    "Recognition": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
-    "Sport": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
-    "Social Media": "text-[#FF4F00]/90 bg-[#FF4F00]/[0.05] border-[#FF4F00]/20",
-
-    // Electric Blue (Engineering/Tech)
-    "Software Engineering": "text-blue-400 bg-blue-500/[0.05] border-blue-400/20",
-    "Engineering": "text-blue-400 bg-blue-500/[0.05] border-blue-400/20",
-
-    // Glowing Indigo/Purple (Product/AI)
-    "Product": "text-indigo-400 bg-indigo-500/[0.05] border-indigo-400/20",
-    "AI": "text-indigo-400 bg-indigo-500/[0.05] border-indigo-400/20",
-    "R&D": "text-indigo-400 bg-indigo-500/[0.05] border-indigo-400/20",
-    "Design": "text-purple-400 bg-purple-500/[0.05] border-purple-400/20",
-
-    // Emerald/Teal (Social/Community)
-    "Community": "text-emerald-400 bg-emerald-500/[0.05] border-emerald-400/20",
-    "Social Entrepreneurship": "text-emerald-400 bg-emerald-500/[0.05] border-emerald-400/20",
-    "Non-Profit": "text-teal-400 bg-teal-500/[0.05] border-teal-400/20",
-
-    // Warm Amber/Gold (Strategy/Leadership)
-    "Strategy": "text-amber-400/90 bg-amber-500/[0.05] border-amber-400/20",
-    "Leadership": "text-amber-400/90 bg-amber-500/[0.05] border-amber-400/20",
-    "Private Equity": "text-amber-400/90 bg-amber-500/[0.05] border-amber-400/20",
-
-    // Cool Zinc (Ops/Logistics)
-    "Operations": "text-zinc-400 bg-zinc-500/[0.05] border-zinc-500/20",
-    "Logistics": "text-zinc-400 bg-zinc-500/[0.05] border-zinc-500/20",
-};
-
+// Reverted to a unified Electric Blue aesthetic for all tags
 const getA16ZColor = (tag) => {
-    return TAG_COLORS[tag] || "text-zinc-400 bg-zinc-500/[0.05] border-zinc-500/20";
+    return "text-[#00A3FF]/90 bg-[#00A3FF]/[0.05] border-[#00A3FF]/20";
 };
 
 const TagPill = ({ tag }) => {
@@ -50,18 +18,18 @@ const TagPill = ({ tag }) => {
 
 const A16ZProjects = () => {
     return (
-        <div className="min-h-screen bg-[#070707] text-white selection:bg-[#FF4F00]/30">
+        <div className="min-h-screen bg-[#070707] text-white selection:bg-[#00A3FF]/30">
             {/* Subtle ambient glow — warm tint to match A16Z main page */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 right-1/4 w-[50vw] h-[35vh] bg-gradient-to-br from-[#FF4F00]/[0.03] via-transparent to-transparent rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 left-0 w-[40vw] h-[25vh] bg-gradient-to-tr from-[#FF4F00]/[0.02] to-transparent rounded-full blur-[100px]" />
+                <div className="absolute top-0 right-1/4 w-[50vw] h-[35vh] bg-gradient-to-br from-[#00A3FF]/[0.03] via-transparent to-transparent rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 left-0 w-[40vw] h-[25vh] bg-gradient-to-tr from-[#00A3FF]/[0.02] to-transparent rounded-full blur-[100px]" />
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-20">
                 {/* Back Link */}
                 <Link
                     to="/a16z"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-[#FF4F00] transition-colors mb-12 group"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-[#00A3FF] transition-colors mb-12 group"
                 >
                     <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
                     Back
@@ -70,7 +38,7 @@ const A16ZProjects = () => {
                 {/* Header */}
                 <div className="mb-16">
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FF4F00] animate-pulse" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] animate-pulse" />
                         <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30">
                             Jack Hu | Full Project Archive
                         </span>
@@ -88,7 +56,7 @@ const A16ZProjects = () => {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="group flex flex-col gap-4 px-6 py-5 rounded-xl border border-white/[0.06] bg-[#070707] hover:bg-white/[0.02] hover:border-[#FF4F00]/30 transition-all duration-300 h-full"
+                            className="group flex flex-col gap-4 px-6 py-5 rounded-xl border border-white/[0.06] bg-[#070707] hover:bg-white/[0.02] hover:border-[#00A3FF]/30 transition-all duration-300 h-full"
                         >
                             {/* Header row: Icon & Title */}
                             <div className="flex items-start gap-4">
@@ -107,7 +75,7 @@ const A16ZProjects = () => {
                                 {/* Content body */}
                                 <div className="flex-1 min-w-0 flex flex-col h-full">
                                     <div className="flex items-start justify-between gap-3 mb-2">
-                                        <h3 className="text-base font-semibold text-white group-hover:text-[#FF4F00] transition-colors line-clamp-2 leading-tight">
+                                        <h3 className="text-base font-semibold text-white group-hover:text-[#00A3FF] transition-colors line-clamp-2 leading-tight">
                                             {project.title}
                                         </h3>
                                         {project.link && (
@@ -115,7 +83,7 @@ const A16ZProjects = () => {
                                                 href={project.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex-shrink-0 text-white/20 hover:text-[#FF4F00] transition-colors mt-0.5"
+                                                className="flex-shrink-0 text-white/20 hover:text-[#00A3FF] transition-colors mt-0.5"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <ExternalLink size={14} />
@@ -150,7 +118,7 @@ const A16ZProjects = () => {
                 <div className="mt-16 pt-8 border-t border-white/[0.06] flex items-center justify-between">
                     <Link
                         to="/a16z"
-                        className="text-sm text-white/30 hover:text-[#FF4F00] transition-colors"
+                        className="text-sm text-white/30 hover:text-[#00A3FF] transition-colors"
                     >
                         ← Back to overview
                     </Link>

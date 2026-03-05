@@ -42,7 +42,7 @@ const allItems = [
         text: 'Scaled organisations.',
         tag: 'Leadership',
         title: 'Enactus President',
-        description: 'Inherited an organisation with 50%+ churn. Tripled revenue ($25k → $75k), lifted NPS from 51 → 90, and achieved highest retention in chapter history. Placed World Top 16 at the Enactus World Cup.',
+        description: 'Inherited an organisation with 50%+ churn. Tripled revenue ($25k → $75k), lifted NPS from 51 → 90, and achieved highest retention in chapter history (10+ years). Placed World Top 16 at the Enactus World Cup.',
         image: enactusImg,
     },
     // ── "What else" phrases ─────────────────────────────────────
@@ -59,14 +59,14 @@ const allItems = [
         text: 'Curate data for frontier AI labs.',
         tag: 'AI / Engineering',
         title: 'AI Data Specialist',
-        description: 'Oversaw data quality for training and evaluating frontier models at labs including Anthropic, Google, and Eleven Labs. Identified as a top performer across engagements.',
+        description: 'Oversaw data quality for training and evaluating frontier models at labs. Clients include Anthropic, Google, and Eleven Labs. Identified as a top performer across engagements.',
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
         text: 'Scale a PE advisory product 0 → $400k ARR.',
-        tag: 'Strategy',
+        tag: 'Product Strategy',
         title: 'Caprae Capital',
-        description: 'Promoted to strategy lead (top performer in a cohort of 50+ from Harvard, MIT, Yale etc.). Worked alongside CEO to grow a new product line from $0 to $400k ARR in 9 months, contributing to $50M in deal value.',
+        description: 'Promoted to strategy lead (top performer in a cohort of 50+ from Harvard, MIT, Yale etc.). Worked directly with CEO to grow a new product line from $0 to $400k ARR in 9 months, contributing to $50M in deal value.',
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
     },
     {
@@ -175,20 +175,20 @@ const A16Z = () => {
     const elseItems = allItems.slice(INTRO_COUNT);
 
     return (
-        <div className="a16z-page min-h-screen bg-[#070707] text-white selection:bg-[#FF4F00]/30 flex flex-col">
+        <div className="a16z-page min-h-screen bg-[#070707] text-white selection:bg-[#00A3FF]/30 flex flex-col">
             {/* Subtle ambient glow */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 right-1/4 w-[50vw] h-[35vh] bg-gradient-to-br from-[#FF4F00]/[0.03] via-transparent to-transparent rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 left-0 w-[40vw] h-[25vh] bg-gradient-to-tr from-[#FF4F00]/[0.02] to-transparent rounded-full blur-[100px]" />
+                <div className="absolute top-0 right-1/4 w-[50vw] h-[35vh] bg-gradient-to-br from-[#00A3FF]/[0.03] via-transparent to-transparent rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 left-0 w-[40vw] h-[25vh] bg-gradient-to-tr from-[#00A3FF]/[0.02] to-transparent rounded-full blur-[100px]" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-16 flex-1 flex flex-col">
 
                 {/* ── Header ── */}
-                <header className="mb-10 md:mb-12 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FF4F00] animate-pulse" />
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/30">
+                <header className="mb-12 md:mb-16">
+                    <div className="flex items-center gap-3 mb-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] animate-pulse" />
+                        <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30">
                             a16z Alpha Fellowship
                         </span>
                     </div>
@@ -202,8 +202,8 @@ const A16Z = () => {
 
                         {/* Intro — flowing hoverable text */}
                         <div className="mb-10">
-                            <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-5">
-                                <span className="text-[#FF4F00]">Jack Hu</span>
+                            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6">
+                                <span className="text-[#00A3FF]">Jack Hu</span>
                             </h1>
                             <p className="text-xl md:text-[1.35rem] lg:text-[1.5rem] font-medium leading-[1.35] tracking-tight">
                                 <HoverPhrase text="As a competitive" index={0} activeIndex={activeIndex} hasInteracted={hasInteracted} onHover={handleHover} />
@@ -235,27 +235,25 @@ const A16Z = () => {
                                 })}
                                 <a
                                     href="/a16z/projects"
-                                    className="inline text-[#FF4F00]/80 hover:text-[#FF4F00] transition-colors duration-300 underline underline-offset-4 decoration-[#FF4F00]/30 hover:decoration-[#FF4F00]/70"
+                                    className="inline text-[#00A3FF]/80 hover:text-[#00A3FF] transition-colors duration-300 underline underline-offset-4 decoration-[#00A3FF]/30 hover:decoration-[#00A3FF]/70"
                                 >
-                                    And much, much more.
+                                    And more.
                                 </a>
                             </p>
                         </div>
 
-                        {/* Bottom: Socials + Kindling Labs logo */}
-                        <div className="flex items-center gap-5 mt-auto pt-6 border-t border-white/[0.06]">
-                            <a href="mailto:jackhhu1@gmail.com" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="Email">
-                                <Mail size={16} />
+                        {/* Bottom: Socials + Status */}
+                        <div className="flex items-center gap-6 mt-12 mb-12">
+                            <a href="mailto:jackhhu1@gmail.com" className="text-white/20 hover:text-[#00A3FF] transition-colors" aria-label="Email">
+                                <Mail size={18} />
                             </a>
-                            <a href="https://github.com/jackhhu" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="GitHub">
-                                <Github size={16} />
+                            <a href="https://github.com/jackhhu" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#00A3FF] transition-colors" aria-label="GitHub">
+                                <Github size={18} />
                             </a>
-                            <a href="https://linkedin.com/in/jackhu" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="LinkedIn">
-                                <Linkedin size={16} />
+                            <a href="https://linkedin.com/in/jackhu" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#00A3FF] transition-colors" aria-label="LinkedIn">
+                                <Linkedin size={18} />
                             </a>
-                            <a href="/" className="text-white/20 hover:text-[#FF4F00] transition-colors" aria-label="Portfolio">
-                                <Globe size={16} />
-                            </a>
+
                             {/* Kindling Labs logo */}
                             <a
                                 href="https://tellmeyourstory.app"
