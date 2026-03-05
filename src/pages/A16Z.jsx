@@ -16,6 +16,7 @@ import kearneyLogo from '../assets/logos/Kearney_Logo.svg.png';
 import stanfordHackathonImg from '../assets/stanford-flower.jpg';
 import top100Img from '../assets/top100.jpg';
 import enactusImg from '../assets/enactus-worldcup.jpg';
+import soccerImg from '../assets/soccer.jpg';
 
 // ─── All showcase items: intro (0-2) then "what else" (3+) ──────
 const allItems = [
@@ -27,7 +28,7 @@ const allItems = [
         description: 'Competed at semi-professional level as a goalkeeper despite being short. Built discipline, resilience, and a competitive edge that carries into everything else.',
         link: 'https://fminside.net/players/7-fm-26/2000256392-jack-hu',
         linkLabel: 'Find me on Football Manager',
-        image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        image: soccerImg,
     },
     {
         text: 'Built products from scratch.',
@@ -92,10 +93,10 @@ const INTRO_COUNT = 3;
 // ─── Marquee logos ───────────────────────────────────────────────
 const logos = [
     { name: "Anthropic", src: anthropicLogo, h: "h-5", filter: "brightness(0) invert(1)" },
-    { name: "ElevenLabs", src: elevenLabsLogo, h: "h-16 scale-110", filter: "brightness(0) invert(1)" },
-    { name: "Google", src: googleLogo, h: "h-9 scale-110", filter: "grayscale(1) brightness(2) contrast(0.9)" },
-    { name: "University of Melbourne", src: unimelbLogo, h: "h-10", filter: "grayscale(1) brightness(2)" },
-    { name: "Deloitte", src: deloitteLogo, h: "h-5", filter: "grayscale(1) brightness(1.7)" },
+    { name: "ElevenLabs", src: elevenLabsLogo, h: "h-16 scale-110", filter: "invert(1)" },
+    { name: "Google", src: googleLogo, h: "h-9 scale-110", filter: "grayscale(1) invert(1)" },
+    { name: "University of Melbourne", src: unimelbLogo, h: "h-10", filter: "grayscale(1) invert(1)" },
+    { name: "Deloitte", src: deloitteLogo, h: "h-5", filter: "grayscale(1) invert(1)" },
     { name: "UN Youth Australia", src: unYouthLogo, h: "h-8", filter: "grayscale(1) brightness(2)" },
     { name: "EY-Parthenon", src: eyParthenonLogo, h: "h-8", filter: "grayscale(1) brightness(2)" },
     { name: "Kearney", src: kearneyLogo, h: "h-5", filter: "brightness(0) invert(1)" },
