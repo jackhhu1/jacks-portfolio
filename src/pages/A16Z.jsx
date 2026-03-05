@@ -91,14 +91,14 @@ const INTRO_COUNT = 3;
 
 // ─── Marquee logos ───────────────────────────────────────────────
 const logos = [
-    { name: "Anthropic", src: anthropicLogo, h: "h-5" },
-    { name: "ElevenLabs", src: elevenLabsLogo, h: "h-16 scale-110" },
-    { name: "Google", src: googleLogo, h: "h-9 scale-110" },
-    { name: "University of Melbourne", src: unimelbLogo, h: "h-10" },
-    { name: "Deloitte", src: deloitteLogo, h: "h-5" },
-    { name: "UN Youth Australia", src: unYouthLogo, h: "h-8" },
-    { name: "EY-Parthenon", src: eyParthenonLogo, h: "h-8" },
-    { name: "Kearney", src: kearneyLogo, h: "h-5" },
+    { name: "Anthropic", src: anthropicLogo, h: "h-5", filter: "brightness(0) invert(1)" },
+    { name: "ElevenLabs", src: elevenLabsLogo, h: "h-16 scale-110", filter: "brightness(0) invert(1)" },
+    { name: "Google", src: googleLogo, h: "h-9 scale-110", filter: "grayscale(1) brightness(2) contrast(0.9)" },
+    { name: "University of Melbourne", src: unimelbLogo, h: "h-10", filter: "grayscale(1) brightness(2)" },
+    { name: "Deloitte", src: deloitteLogo, h: "h-5", filter: "grayscale(1) brightness(1.7)" },
+    { name: "UN Youth Australia", src: unYouthLogo, h: "h-8", filter: "grayscale(1) brightness(2)" },
+    { name: "EY-Parthenon", src: eyParthenonLogo, h: "h-8", filter: "grayscale(1) brightness(2)" },
+    { name: "Kearney", src: kearneyLogo, h: "h-5", filter: "brightness(0) invert(1)" },
 ];
 const marqueeLogos = [...logos, ...logos, ...logos];
 
@@ -187,7 +187,7 @@ const A16Z = () => {
                 {/* ── Header ── */}
                 <header className="mb-12 md:mb-16">
                     <div className="flex items-center gap-3 mb-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] animate-pulse" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FF4F00] animate-pulse" />
                         <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30">
                             a16z Alpha Fellowship
                         </span>
@@ -254,15 +254,22 @@ const A16Z = () => {
                                 <Linkedin size={18} />
                             </a>
 
-                            {/* Kindling Labs logo */}
+                            {/* Kindling Labs status */}
                             <a
                                 href="https://tellmeyourstory.app"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="ml-auto flex items-center gap-2 opacity-40 hover:opacity-80 transition-opacity"
+                                className="ml-auto flex items-center gap-2.5 opacity-60 hover:opacity-100 transition-opacity"
                             >
-                                <img src={KindlingLogoPng} alt="Kindling Labs" className="h-5 w-5 rounded" />
-                                <span className="text-[10px] font-medium text-white/40 tracking-wide">Kindling Labs</span>
+                                <div className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <span className="text-[11px] font-medium text-white/50 tracking-wide">Currently</span>
+                                    <img src={KindlingLogoPng} alt="Kindling Labs" className="h-4 w-4 rounded-sm" />
+                                    <span className="text-[11px] font-medium text-white/80 tracking-wide">Kindling Labs</span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -320,7 +327,10 @@ const A16Z = () => {
                                 <img
                                     src={logo.src}
                                     alt={logo.name}
-                                    className={`${logo.h} w-auto object-contain contrast-[1.2] invert mix-blend-screen`}
+                                    className={`${logo.h} w-auto object-contain`}
+                                    style={{
+                                        filter: logo.filter,
+                                    }}
                                 />
                             </div>
                         ))}
