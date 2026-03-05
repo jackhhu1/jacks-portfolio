@@ -18,6 +18,7 @@ export const tagColors = {
     // Tech & Engineering
     "Software Engineering": { bg: "bg-blue-500/10", text: "text-blue-400", border: "border-blue-500/20" },
     "Product": { bg: "bg-indigo-500/10", text: "text-indigo-400", border: "border-indigo-500/20" },
+    "Data": { bg: "bg-indigo-500/10", text: "text-indigo-400", border: "border-indigo-500/20" },
     "AI": { bg: "bg-cyan-500/10", text: "text-cyan-400", border: "border-cyan-500/20" },
     "Engineering": { bg: "bg-sky-500/10", text: "text-sky-400", border: "border-sky-500/20" },
     "R&D": { bg: "bg-teal-500/10", text: "text-teal-400", border: "border-teal-500/20" },
@@ -82,7 +83,7 @@ export const projects = [
         id: "ai",
         title: "AI Data Specialist",
         summary: "Oversaw data quality for a leading AI lab, clients include Anthropic, Google, Eleven Labs and more.",
-        tags: ["Product", "AI", "Engineering"],
+        tags: ["Data", "AI", "Engineering"],
         date: "2025-2026",
         featured: false,
         icon: "🤖",
@@ -204,7 +205,7 @@ export const projects = [
         tags: ["Recognition"],
         date: "2024",
         featured: false,
-        icon: "🌍",
+        icon: "📢",
         iconBg: "bg-emerald-500/15",
         accent: "from-emerald-500 to-teal-600",
         content: {
@@ -220,7 +221,7 @@ export const projects = [
         id: "dav-debating",
         title: "DAV A-Grade Debating",
         summary: "State Semi-Finalist for the largest english debating competion in the world (Undefeated 9 rounds).",
-        tags: ["Recognition", "Community"],
+        tags: ["Recognition", "Communication"],
         date: "2021",
         featured: false,
         icon: "🎙️",
@@ -385,6 +386,101 @@ export const projects = [
             process: "🚧 **Under construction.**",
             outcome: "Received the Most Innovative Student Award from Enactus Australia.",
             lessons: "Innovation in the non-profit sector is about applying business frameworks to solve social problems in sustainable ways."
+        }
+    },
+    {
+        id: "drone-delivery",
+        title: "Drone Delivery System",
+        summary: "Systems design and algorithms, coded in Java.",
+        tags: ["Engineering", "Software Engineering"],
+        date: "2025",
+        featured: false,
+        icon: "🚁",
+        iconBg: "bg-sky-500/15",
+        accent: "from-sky-500 to-blue-600",
+        content: {
+            problem: "N/A",
+            context: "N/A",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "N/A",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+    {
+        id: "multimodal-emojis",
+        title: "Multimodal ML pipeline to generate emojis",
+        summary: "Generate emojis from text, sketch or image input (Python/PyTorch)",
+        tags: ["AI", "Engineering", "Data"],
+        date: "2024",
+        featured: false,
+        icon: "🎭",
+        iconBg: "bg-purple-500/15",
+        accent: "from-purple-500 to-pink-600",
+        content: {
+            problem: "N/A",
+            context: "N/A",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "N/A",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+    {
+        id: "ai-career-advisor",
+        title: "AI Career Advisor",
+        summary: "Built on TypeScript and Azure.",
+        tags: ["Software Engineering", "AI"],
+        date: "2024",
+        featured: false,
+        icon: "💼",
+        iconBg: "bg-indigo-500/15",
+        accent: "from-indigo-500 to-blue-600",
+        content: {
+            problem: "N/A",
+            context: "N/A",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "N/A",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+    {
+        id: "road-signs-cnn",
+        title: "Road Sign Categorization",
+        summary: "Trained ML to categorize road signs using CNN.",
+        tags: ["AI", "Engineering", "Data"],
+        date: "2024",
+        featured: false,
+        icon: "🚦",
+        iconBg: "bg-red-500/15",
+        accent: "from-red-500 to-orange-600",
+        content: {
+            problem: "N/A",
+            context: "N/A",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "N/A",
+            lessons: "🚧 **Under construction.**"
+        }
+    },
+    {
+        id: "dermacheck",
+        title: "Dermacheck",
+        summary: "Trained ML to categorize skin lesions for cancer AI.",
+        tags: ["AI", "Engineering", "Data"],
+        date: "2025",
+        featured: false,
+        icon: "🩺",
+        iconBg: "bg-rose-500/15",
+        accent: "from-rose-500 to-pink-600",
+        content: {
+            problem: "N/A",
+            context: "N/A",
+            constraints: "N/A",
+            process: "🚧 **Under construction.**",
+            outcome: "N/A",
+            lessons: "🚧 **Under construction.**"
         }
     }
 ];

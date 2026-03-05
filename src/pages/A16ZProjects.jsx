@@ -1,22 +1,34 @@
 import { ArrowLeft, ExternalLink, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { projects, getTagColor } from '../data/projects';
 
-// Reverted to a unified Electric Blue aesthetic for all tags
-const getA16ZColor = (tag) => {
-    return "text-[#00A3FF]/90 bg-[#00A3FF]/[0.05] border-[#00A3FF]/20";
-};
-
 const TagPill = ({ tag }) => {
-    const colorClasses = getA16ZColor(tag);
+    const colors = getTagColor(tag);
     return (
-        <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${colorClasses}`}>
+        <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${colors.bg} ${colors.text} ${colors.border}`}>
             {tag}
         </span>
     );
 };
 
 const A16ZProjects = () => {
+    const [filter, setFilter] = useState('All');
+
+    // Tech & Engineering tags
+    const technicalTags = [
+        "Software Engineering", "Product", "Data", "AI",
+        "Engineering", "R&D", "Design"
+    ];
+
+    const filteredProjects = projects.filter(p => {
+        if (filter === 'All') return true;
+        if (filter === 'Technical') {
+            return p.tags.some(tag => technicalTags.includes(tag));
+        }
+        return true;
+    });
+
     return (
         <div className="min-h-screen bg-[#070707] text-white selection:bg-[#00A3FF]/30">
             {/* Subtle ambient glow — warm tint to match A16Z main page */}
@@ -43,7 +55,7 @@ const A16ZProjects = () => {
                             Jack Hu | Full Project Archive
                         </span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#00A3FF]">
                         All Projects
                     </h1>
                     <p className="text-lg text-white/40 max-w-xl">
@@ -51,9 +63,31 @@ const A16ZProjects = () => {
                     </p>
                 </div>
 
+                {/* Filters */}
+                <div className="flex items-center gap-3 mb-8">
+                    <button
+                        onClick={() => setFilter('All')}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${filter === 'All'
+                                ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
+                                : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
+                            }`}
+                    >
+                        All Projects
+                    </button>
+                    <button
+                        onClick={() => setFilter('Technical')}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${filter === 'Technical'
+                                ? 'bg-[#00A3FF]/10 text-[#00A3FF] border-[#00A3FF]/30'
+                                : 'bg-white/5 text-white/40 border-transparent hover:text-white/60 hover:bg-white/10'
+                            }`}
+                    >
+                        Technical
+                    </button>
+                </div>
+
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {projects.map((project) => (
+                    {filteredProjects.map((project) => (
                         <div
                             key={project.id}
                             className="group flex flex-col gap-4 px-6 py-5 rounded-xl border border-white/[0.06] bg-[#070707] hover:bg-white/[0.02] hover:border-[#00A3FF]/30 transition-all duration-300 h-full"
@@ -123,7 +157,7 @@ const A16ZProjects = () => {
                         ← Back to overview
                     </Link>
                     <span className="text-[11px] text-white/20 font-medium uppercase tracking-wider">
-                        {projects.length} projects
+                        {filteredProjects.length} projects
                     </span>
                 </div>
             </div>
