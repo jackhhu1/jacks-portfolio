@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CommandMenu } from './components/CommandMenu';
 import { lazy, Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy loading pages for performance
 const Home = lazy(() => import('./pages/Home'));
@@ -53,6 +54,7 @@ function AppContent() {
           } />
         </Routes>
       </Suspense>
+      <Analytics />
     </Router>
   );
 }
