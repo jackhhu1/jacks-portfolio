@@ -21,7 +21,7 @@ const Contact = () => {
                             </div>
                             <span className="text-lg font-medium">jackhhu1@gmail.com</span>
                         </a>
-                        <a href="#" className="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <a href="https://www.linkedin.com/in/jackhhu/" className="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                             <div className="p-3 bg-gray-100 dark:bg-neutral-900 rounded-full">
                                 <Linkedin size={24} />
                             </div>
@@ -43,7 +43,12 @@ const Contact = () => {
                 </div>
 
                 {/* Contact Form */}
-                <form className="flex flex-col gap-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <form
+                    action="https://formspree.io/f/mqeybadl"
+                    method="POST"
+                    className="flex flex-col gap-6 animate-fade-in"
+                    style={{ animationDelay: '0.2s' }}
+                >
                     <div className="flex flex-col gap-2">
                         <label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-gray-300">
                             Name
@@ -51,6 +56,8 @@ const Contact = () => {
                         <input
                             type="text"
                             id="name"
+                            name="name"
+                            required
                             className="px-4 py-3 rounded-lg border border-gray-200 dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all"
                             placeholder="Your name"
                         />
@@ -63,6 +70,8 @@ const Contact = () => {
                         <input
                             type="email"
                             id="email"
+                            name="email"
+                            required
                             className="px-4 py-3 rounded-lg border border-gray-200 dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all"
                             placeholder="john@example.com"
                         />
@@ -74,13 +83,15 @@ const Contact = () => {
                         </label>
                         <textarea
                             id="message"
+                            name="message"
                             rows="5"
+                            required
                             className="px-4 py-3 rounded-lg border border-gray-200 dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all resize-none"
                             placeholder="How can I help you?"
                         ></textarea>
                     </div>
 
-                    <button type="button" className="btn btn-primary mt-2">
+                    <button type="submit" className="btn btn-primary mt-2">
                         Send Message
                     </button>
                 </form>
