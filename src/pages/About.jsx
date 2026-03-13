@@ -15,7 +15,7 @@ const About = () => {
                     <div className="prose dark:prose-invert text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
                             My work sits at the intersection of product, engineering, and growth. I don't just write strategy decks; I deploy code, design systems, and lead teams to execute on that strategy.
-                            Whether it's scaling a fintech product used by thousands or architecting a token economy for a decentralized community, I focus on building resilient systems that compound over time.
+                            Whether it's scaling a consumer product used by hundreds or a community for university students, I focus on building resilient systems that compound over time.
                         </p>
                     </div>
                 </section>
@@ -37,7 +37,7 @@ const About = () => {
                     <div className="prose dark:prose-invert text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
                             I am currently focused on enabling the next generation of software products through AI and decentralized systems.
-                            My long-term goal is to build tools that empower individuals to achieve financial and creative sovereignty.
+                            My long-term goal is to build tools and resources that empower individuals to achieve greater financial and creative autonomy.
                         </p>
                     </div>
                 </section>
