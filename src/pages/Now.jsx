@@ -39,7 +39,7 @@ const Now = () => {
                                     <span className="text-xs text-gray-400 font-mono">Founding</span>
                                 </div>
                                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    Developing the initial investment thesis and recruiting the first cohort of technical founders.
+                                    Developing AI tools for SMBs and consumer mobile software.
                                 </p>
                             </a>
                         </li>
