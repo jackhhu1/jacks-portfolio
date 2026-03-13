@@ -6,6 +6,7 @@ import LogoMarquee from '../components/LogoMarquee';
 import KindlingLogoPng from '../assets/KindlingLogo.png';
 import enactusWorldcupImage from '../assets/enactus-worldcup.jpg';
 import kindlingLabsImage from '../assets/kindling-labs.png';
+import leadershipImage from '../assets/leadership.jpg';
 
 // ─── Scattered Images ───────────────────────────────────────────
 const scatteredImages = [
@@ -16,26 +17,26 @@ const scatteredImages = [
         style: { top: '5%', left: '55%', rotate: '-4deg', width: '280px', height: '200px', zIndex: 3 },
     },
     {
-        src: 'https://images.unsplash.com/photo-1504198458649-3128b932f49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        alt: 'Nature materials',
+        src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Modern architecture
+        alt: 'Modern corporate architecture',
         label: 'Caprae',
         style: { top: '18%', left: '74%', rotate: '6deg', width: '230px', height: '300px', zIndex: 2 },
     },
     {
-        src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        alt: 'Analytics dashboard',
+        src: leadershipImage,
+        alt: 'Cadets parade',
+        label: 'Leadership',
+        style: { top: '38%', left: '80%', rotate: '-7deg', width: '220px', height: '170px', zIndex: 5 },
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Code / Software
+        alt: 'Software code and technology',
         label: 'Kindling Labs',
         style: { top: '52%', left: '58%', rotate: '3deg', width: '260px', height: '180px', zIndex: 4 },
     },
     {
-        src: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        alt: 'Presenting on stage',
-        label: 'Leadership',
-        style: { top: '38%', left: '80%', rotate: '-7deg', width: '220px', height: '170px', zIndex: 1 },
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        alt: 'Mobile app',
+        src: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // iPhone / App product frame
+        alt: 'Digital product design',
         label: 'Product',
         style: { top: '65%', left: '75%', rotate: '5deg', width: '200px', height: '260px', zIndex: 5 },
     },
