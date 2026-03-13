@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { ArrowUpRight, Users, TrendingUp, Code, Globe, Shirt } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { projects as allProjects, getTagColor } from '../data/projects';
+import enactusWorldcupImage from '../assets/enactus-worldcup.jpg';
+import kindlingLabsImage from '../assets/kindling-labs.png';
 
 const ProjectShowcase = () => {
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ const ProjectShowcase = () => {
                 { label: 'Revenue', value: '3x', icon: TrendingUp },
             ],
             color: 'from-yellow-500 to-amber-600',
-            image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+            image: enactusWorldcupImage,
         },
         'caprae': {
             category: 'Strategy',

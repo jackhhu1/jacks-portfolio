@@ -1,7 +1,8 @@
 import KindlingLogoPng from '../assets/KindlingLogo.png';
 import EnactusLogo from '../assets/enactusLogo.png';
 import CapraeLogo from '../assets/caprae_capital_logo.jpeg';
-
+import enactusWorldcupImage from '../assets/enactus-worldcup.jpg';
+import kindlingLabsImage from '../assets/kindling-labs.png';
 // Tag color mapping — subtle, outlined pills per tag
 // Used by both Projects.jsx and ProjectDetail.jsx
 export const tagColors = {
@@ -50,7 +51,7 @@ export const projects = [
         iconBg: "bg-neutral-800",
         accent: "from-blue-600 to-indigo-800",
         link: "https://tellmeyourstory.app",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: kindlingLabsImage,
         content: {
             problem: "1: Intergenerational relationships, especially across borders and languages. 2: Household food waste. 3: Grassroots soccer analytics accessibility.",
             context: "Founded Kindling Labs as a software studio - a framework for rapidly validating, building, and shipping software products from concept to live users.",
@@ -130,7 +131,7 @@ export const projects = [
         iconImage: EnactusLogo,
         iconBg: "bg-yellow-400",
         accent: "from-yellow-400 to-yellow-600",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: enactusWorldcupImage,
         content: {
             problem: "The university's Enactus chapter was struggling with low member engagement, fragmented project management, and stagnant revenue that limited the scale of social impact initiatives.",
             context: "As President, I inherited an organisation of 50 members running 3 social enterprise projects. Member NPS was at 51 and with a 50%+ churn rate.",

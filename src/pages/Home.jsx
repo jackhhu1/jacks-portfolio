@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import ProjectShowcase from '../components/ProjectShowcase';
 import LogoMarquee from '../components/LogoMarquee';
 import KindlingLogoPng from '../assets/KindlingLogo.png';
+import enactusWorldcupImage from '../assets/enactus-worldcup.jpg';
+import kindlingLabsImage from '../assets/kindling-labs.png';
 
 // ─── Scattered Images ───────────────────────────────────────────
 const scatteredImages = [
     {
-        src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        src: enactusWorldcupImage,
         alt: 'Team collaboration',
         label: 'Enactus',
         style: { top: '5%', left: '55%', rotate: '-4deg', width: '280px', height: '200px', zIndex: 3 },
